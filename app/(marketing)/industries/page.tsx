@@ -23,6 +23,9 @@ export default function IndustriesPage() {
   const outlineButtonColorScheme = useColorModeValue('primary', 'gray')
 
   return (
+    <>
+    <title>Industries - Bevcon Zentry</title>
+    <meta name="description" content="Discover our specialized industrial doors and loading bay solutions for diverse industries" />
     <Box>
       {/* Hero Section */}
       <Box position="relative" overflow="hidden">
@@ -130,5 +133,6 @@ export default function IndustriesPage() {
         </Container>
       </Box>
     </Box>
+    </>
   )
 }

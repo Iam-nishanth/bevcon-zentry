@@ -37,6 +37,7 @@ import {
   getAllBrands,
   getAllCategories,
 } from '#data/products'
+import { NextPage } from 'next'
 
 const brands = getAllBrands()
 const productCategories = getAllCategories()
@@ -131,7 +132,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   )
 }
 
-const ProductsPage = () => {
+const ProductsPage: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [selectedBrands, setSelectedBrands] = useState<string[]>([])
@@ -194,6 +195,9 @@ const ProductsPage = () => {
   }
 
   return (
+    <>
+    <title>Products - Bevcon Zentry</title>
+    <meta name="description" content="Discover our complete range of products for industrial solutions" />
     <Box bg={bgColor} minH="100vh">
       {/* Hero Section */}
       <Box
@@ -425,6 +429,7 @@ const ProductsPage = () => {
         </Grid>
       </Container>
     </Box>
+    </>
   )
 }
 

@@ -159,7 +159,7 @@ const FooterNavSection: React.FC<FooterNavSectionProps> = ({
   <FooterSection title={title} style={style}>
     <Stack spacing="2">
       {links.map(({ href, label }) => (
-        <FooterNavLink key={href} href={href}>
+        <FooterNavLink key={href} href={href} _hover={{ color: 'primary.500', _dark: { color: 'white' } }}>
           {label}
         </FooterNavLink>
       ))}

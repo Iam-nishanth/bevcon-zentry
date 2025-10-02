@@ -31,7 +31,7 @@ const siteConfig = {
       {
         id: 'quote',
         label: 'Get a Quote',
-        href: '/quote',
+        href: '/contact',
         variant: 'primary',
       },
     ],
@@ -64,23 +64,23 @@ const siteConfig = {
     copyright: (
       <>
         Built by{' '}
-        <Link href="mailto:nishanthalapati123@gmail.com">Nishanth</Link>
+        <Link _hover={{ color: 'primary.500', textDecoration: 'underline' }} href="mailto:nishanthalapati123@gmail.com">Nishanth</Link>
       </>
     ),
-    links: [
-      {
-        href: '#privacy',
-        label: 'Privacy Policy',
-      },
-      {
-        href: '#terms',
-        label: 'Terms of Service',
-      },
-      {
-        href: '#cookies',
-        label: 'Cookie Policy',
-      },
-    ],
+    // links: [
+    //   {
+    //     href: '#privacy',
+    //     label: 'Privacy Policy',
+    //   },
+    //   {
+    //     href: '#terms',
+    //     label: 'Terms of Service',
+    //   },
+    //   {
+    //     href: '#cookies',
+    //     label: 'Cookie Policy',
+    //   },
+    // ],
   }
 }
 

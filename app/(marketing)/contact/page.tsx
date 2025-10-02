@@ -53,8 +53,8 @@ const ContactPage: NextPage = () => {
 
   return (
     <>
-      <title>Contact Us</title>
-      <meta name="description" content="Contact Us" />
+      <title>Contact Us - Bevcon Zentry</title>
+      <meta name="description" content="Have questions about our products or ready to get in touch? Send us a message and we'll respond as soon as possible." />
       <Box position="relative" overflow="hidden" minH="100vh" bg={useColorModeValue('gray.50', 'gray.900')}>
       <BackgroundGradient height="100%" zIndex="-1" />
       
