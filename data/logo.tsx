@@ -1,0 +1,15 @@
+import { chakra, HTMLChakraProps, useColorModeValue } from '@chakra-ui/react'
+import BevconZentry from "#data/BevconZentry-cropped.svg"
+
+export const Logo: React.FC<HTMLChakraProps<'svg'>> = (props) => {
+  const color = useColorModeValue('#231f20', '#fff')
+  return (
+    <chakra.svg
+      as={BevconZentry}
+      key="Bevcon Zentry"
+      color={color}
+      width={150}
+      display="block"
+    />
+  )
+}
