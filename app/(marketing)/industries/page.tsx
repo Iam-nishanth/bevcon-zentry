@@ -61,8 +61,7 @@ export default function IndustriesPage() {
                   maxW="2xl"
                   mx="auto"
                 >
-                  Discover how Bevcon Zentry's specialized industrial doors and
-                  loading bay solutions
+                  Bevcon Zentry's specialized Industrial and Warehousing solutions
                 </Text>
               </Box>
               {/* <Heading

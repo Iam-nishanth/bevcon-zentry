@@ -158,7 +158,7 @@ const ProductsPage: NextPage = () => {
                       Our Products
                     </Heading>
                     <Text color="muted" fontSize={{ base: 'lg', md: 'xl' }} maxW="2xl" mx="auto">
-                      Discover our complete range of products for industrial solutions
+                      Discover our complete range of products for Industrial and Warehousing Solutions
                     </Text>
                   </Box>
                 </FallInPlace>

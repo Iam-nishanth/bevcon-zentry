@@ -11,7 +11,7 @@ const industries: { [key: string]: Industry } = {
   pharma: {
     title: 'Pharmaceutical',
     description: 'Ensure compliance, contamination control, and operational efficiency in pharmaceutical manufacturing and research facilities.',
-    imageSrc: '/home/industrial-hall-1630742_1280.jpg',
+    imageSrc: '/products/nergeco/Doors for Clean Processes/Automatic_Nergeco_doors_in_the_pharmaceutical_industry.jpg',
     category: 'Healthcare & Life Sciences',
     benefits: [
       'Clean room compatibility',
@@ -29,9 +29,9 @@ const industries: { [key: string]: Industry } = {
     ]
   },
   beverages: {
-    title: 'Beverages',
+    title: 'Food Processing & Beverages',
     description: 'Optimize production flow, maintain hygiene standards, and ensure product quality in beverage manufacturing and bottling facilities.',
-    imageSrc: '/home/Industrial Bay Doors.png',
+    imageSrc: '/products/nergeco/Food Processing Industry/Nergeco_high-speed_doors_forming_air_lock_with_isothermal_doors.jpg',
     category: 'Food & Beverage',
     benefits: [
       'Hygienic design standards',
@@ -72,7 +72,7 @@ const industries: { [key: string]: Industry } = {
     title: 'Warehouse & Logistics',
     description: 'Enhance operational efficiency, safety, and throughput in modern warehouse and distribution facilities.',
     imageSrc: '/home/DockLeveller.png',
-    category: 'Logistics & Distribution',
+    category: 'Warehousing',
     benefits: [
       'High-traffic durability',
       'Safety compliance',
@@ -88,31 +88,31 @@ const industries: { [key: string]: Industry } = {
       'Safety interlock systems'
     ]
   },
-  food: {
-    title: 'Food Processing',
-    description: 'Meet strict hygiene requirements while maintaining efficient production processes in food processing facilities.',
-    imageSrc: '/home/Roller Shutters.png',
-    category: 'Food & Beverage',
-    benefits: [
-      'HACCP compliance',
-      'Easy-to-clean surfaces',
-      'Temperature regulation',
-      'Pest prevention',
-      'Production efficiency'
-    ],
-    solutions: [
-      'Sanitary processing doors',
-      'Temperature-controlled environments',
-      'Wash-down resistant equipment',
-      'Automated access systems',
-      'Food-safe materials throughout'
-    ]
-  },
+  // food: {
+  //   title: 'Food Processing',
+  //   description: 'Meet strict hygiene requirements while maintaining efficient production processes in food processing facilities.',
+  //   imageSrc: '/home/Roller Shutters.png',
+  //   category: 'Food & Beverage',
+  //   benefits: [
+  //     'HACCP compliance',
+  //     'Easy-to-clean surfaces',
+  //     'Temperature regulation',
+  //     'Pest prevention',
+  //     'Production efficiency'
+  //   ],
+  //   solutions: [
+  //     'Sanitary processing doors',
+  //     'Temperature-controlled environments',
+  //     'Wash-down resistant equipment',
+  //     'Automated access systems',
+  //     'Food-safe materials throughout'
+  //   ]
+  // },
   cargo: {
     title: 'Cargo & Freight Hubs',
     description: 'Support high-volume cargo terminals with rapid throughput, weather protection, and safe loading operations.',
-    imageSrc: '/home/highspeed doors.jpg',
-    category: 'Transportation & Logistics',
+    imageSrc: '/home/Roller Shutters.png',
+    category: 'Logistics',
     benefits: [
       'Fast turnaround at busy docks',
       'Weather-tight sealing for freight',
@@ -132,7 +132,7 @@ const industries: { [key: string]: Industry } = {
     title: 'Automotive & Mobility',
     description: 'Enable efficient vehicle production, testing, and showroom operations with tailored access and safety solutions.',
     imageSrc: '/home/Industrial Bay Doors.png',
-    category: 'Manufacturing & Assembly',
+    category: 'Automotive',
     benefits: [
       'Separation of production and display areas',
       'Controlled environments for paint and assembly',
@@ -151,7 +151,7 @@ const industries: { [key: string]: Industry } = {
   steel: {
     title: 'Steel & Metal Works',
     description: 'Operate safely around heavy machinery, sparks, and extreme temperatures in steel processing facilities.',
-    imageSrc: '/home/DockLeveller.png',
+    imageSrc: '/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-flexible-door-with-high-wind-resistance-installed-on-a-mining-maintenance-workshop.jpg',
     category: 'Heavy Industry',
     benefits: [
       'Heat and spark resistant protection',

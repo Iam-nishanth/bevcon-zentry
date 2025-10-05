@@ -143,7 +143,7 @@ Operating at double the speed of traditional industrial doors, the system minimi
       tags: ["Food Safe", "Corrosion Resistant", "HACCP Compliant"],
       image: [
         "/products/nergeco/Food Processing Industry/High-speed_flexible_door_with_frame_which_is_more_corrosion-resistant_than_stainless_steel.jpg",
-        "/products/nergeco/Food Processing Industry/Fully_pressure-washable_high-speed_flexible_door_for_the_food_processing_industry.jpg",
+        // "/products/nergeco/Food Processing Industry/Fully_pressure-washable_high-speed_flexible_door_for_the_food_processing_industry.jpg",
         "/products/nergeco/Food Processing Industry/Multi-composite_frame_which_may_be_cleaned_by_high-pressure_spraying.jpg"
       ]
     },
@@ -337,7 +337,7 @@ Customization options include: variable curtain transparency, adjustable insulat
         "/products/nergeco/T-Series/The-double-wall-curtain-of-this-Nergeco-Entrematic-flexible-door-closes-an-air-lock-protecting-cold-rooms.jpg",
         "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-flexible-doors-for-outside-exposure-and-strong-winds-in-shipyards.jpg",
         "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-flexible-door-with-high-wind-resistance-installed-on-a-mining-maintenance-workshop.jpg",
-        "/products/nergeco/T-Series/Automatic-double-acoustic-wall-NERGECO-T-ENDURO-2-folding-flexible-doors-for-helicopter-maintenance-workshop-Marine-Nationale.jpg",
+        // "/products/nergeco/T-Series/Automatic-double-acoustic-wall-NERGECO-T-ENDURO-2-folding-flexible-doors-for-helicopter-maintenance-workshop-Marine-Nationale.jpg",
         "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-flexible-doors-with-insect-curtains-to-preserve-natural-ventilation.jpg",
         "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-doors-installed-facing-the-North-Atlantic-on-the-premises-of-a-cold-logistics-company.jpg",
         "/products/nergeco/T-Series/Successful-integration-of-NERGECO-T-ENDURO-2-high-speed-doors-on-wooden-framed-building.jpg",
