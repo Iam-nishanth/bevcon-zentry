@@ -83,10 +83,10 @@ const Products: React.FC<ProductsProps> = (props) => {
 
   return (
     <Section {...rest}>
-      <Stack spacing={[4, null, 8]}>
+      <Stack spacing={[4, null, 8]} textAlign="center">
         {(title || description) && (
           <Wrap>
-            <SectionTitle title={title} description={description} align="center" />
+            <SectionTitle title={title} description={description} style={{ textAlign: 'center' }} />
           </Wrap>
         )}
         <SimpleGrid columns={columns} spacing={spacing}>

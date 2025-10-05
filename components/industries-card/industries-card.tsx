@@ -15,7 +15,7 @@ import {
   ListItem,
   ListIcon,
 } from '@chakra-ui/react'
-import { FiCheck, FiArrowRight } from 'react-icons/fi'
+import { FiCheck } from 'react-icons/fi'
 import Image from 'next/image'
 import { ButtonLink } from '#components/button-link/button-link'
 
@@ -40,15 +40,27 @@ export default function IndustriesCard({
   learnMoreHref = '/products',
   contactHref = '/contact',
 }: IndustriesCardProps) {
+  const cardBg = useColorModeValue('white', 'gray.900')
+  const cardShadow = useColorModeValue('lg', 'dark-lg')
+  const borderColor = useColorModeValue('gray.100', 'gray.700')
+  const tagColor = useColorModeValue('primary.600', 'primary.300')
+  const headingColor = useColorModeValue('gray.700', 'white')
+  const descriptionColor = useColorModeValue('gray.500', 'gray.400')
+  const sectionHeadingColor = useColorModeValue('gray.700', 'gray.200')
+  const listItemColor = useColorModeValue('gray.600', 'gray.300')
+  const solutionColor = useColorModeValue('gray.700', 'gray.200')
+
   return (
     <Center py={6}>
       <Box
         maxW={'445px'}
         w={'full'}
-        bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'lg'}
+        bg={cardBg}
+        boxShadow={cardShadow}
         rounded={'md'}
         p={6}
+        borderWidth="1px"
+        borderColor={borderColor}
         overflow={'hidden'}>
         <Box h={'210px'} bg={useColorModeValue('gray.100', 'gray.700')} mt={-6} mx={-6} mb={6} pos={'relative'}>
           <Image
@@ -60,32 +72,33 @@ export default function IndustriesCard({
         </Box>
         <Stack spacing={4}>
           <Tag
-            color={'primary.500'}
+            color={tagColor}
             textTransform={'uppercase'}
             fontWeight={800}
             fontSize={'sm'}
-            letterSpacing={1.1}
+            letterSpacing={1}
+            ml={-2}
             alignSelf="flex-start">
             {category}
           </Tag>
           <Heading
-            color={useColorModeValue('gray.700', 'white')}
+            color={headingColor}
             fontSize={'2xl'}
             fontFamily={'body'}>
             {title}
           </Heading>
-          <Text color={useColorModeValue('gray.500', 'gray.400')}>
+          <Text color={descriptionColor}>
             {description}
           </Text>
 
           <VStack align="stretch" spacing={3}>
             <Box>
-              <Text fontWeight={600} fontSize="md" mb={2} color="gray.700">
+              <Text fontWeight={800} fontSize="md" mb={2} color={sectionHeadingColor}>
                 Key Benefits:
               </Text>
               <List spacing={1}>
                 {benefits.slice(0, 3).map((benefit, index) => (
-                  <ListItem key={index} fontSize="sm" color="gray.600">
+                  <ListItem key={index} fontSize="md" color={listItemColor}>
                     <ListIcon as={FiCheck} color="green.500" />
                     {benefit}
                   </ListItem>
@@ -94,13 +107,25 @@ export default function IndustriesCard({
             </Box>
 
             <Box>
-              <Text fontWeight={600} fontSize="md" mb={2} color="gray.700">
+              <Text fontWeight={600} fontSize="md" mb={2} color={sectionHeadingColor}>
                 Our Solutions:
               </Text>
               <HStack spacing={2} flexWrap="wrap">
                 {solutions.slice(0, 2).map((solution, index) => (
-                  <Badge key={index} colorScheme="blue" variant="subtle" fontSize="xs">
-                    {solution}
+                  <Badge
+                    key={index}
+                    fontSize="md"
+                    px={0}
+                    py={0}
+                    bg="transparent"
+                    color={solutionColor}
+                    textTransform="uppercase"
+                    fontWeight={800}
+                    display="flex"
+                    alignItems="center"
+                    gap={2}
+                  >
+                    <Text>-</Text> {solution}
                   </Badge>
                 ))}
               </HStack>

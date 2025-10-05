@@ -9,7 +9,7 @@ export * from './skb'
 export * from './loading-systems'
 
 // Combined product data from all brands
-export const allBrands = [nergecoData, skbData, loadingSystemsData]
+export const allBrands = [nergecoData, skbData]
 
 // All products combined
 export const allProducts = [

@@ -55,6 +55,7 @@ import {
   HighlightsTestimonialItem,
 } from '#components/highlights'
 import { ImagesSlider } from '#components/image-slider'
+import { IndustriesCarousel } from '#components/industries-carousel'
 import { LogoSlider } from '#components/logo-slider'
 import { ChakraLogo, NextjsLogo } from '#components/logos'
 import { FallInPlace } from '#components/motion/fall-in-place'
@@ -78,6 +79,7 @@ const Home: NextPage = () => {
       <ProductsSection />
       <StickyScrollSection />
       <LogoSlider />
+      <IndustriesCarousel />
       <FaqSection />
     </Box>
     </>
@@ -88,7 +90,7 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
+      <Container maxW="container.xl" pt={{ base: 24, md: 40, lg: 60 }} pb="40" px={{ base: "15px", md: "15px" }}>
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
           <Hero
             id="home"
@@ -97,7 +99,7 @@ const HeroSection: React.FC = () => {
             title={
               <FallInPlace>
                 Industrial Doors and
-                <Br /> Loading Bay Solutions
+                <Br /> Warehousing Solutions
               </FallInPlace>
             }
             description={
@@ -109,7 +111,7 @@ const HeroSection: React.FC = () => {
             }
           >
             <FallInPlace delay={0.8}>
-              <ButtonGroup spacing={4} alignItems="center" pt="4" pb="12">
+              <Stack direction={{ base: 'column', md: 'row' }} spacing={3} alignItems={{ base: 'stretch', md: 'center' }} pt="4" pb="8">
                 <ButtonLink colorScheme="primary" size="lg" href="/contact">
                   Request a Quote
                 </ButtonLink>
@@ -132,7 +134,7 @@ const HeroSection: React.FC = () => {
                 >
                   View Products
                 </ButtonLink>
-              </ButtonGroup>
+              </Stack>
             </FallInPlace>
           </Hero>
           <Box

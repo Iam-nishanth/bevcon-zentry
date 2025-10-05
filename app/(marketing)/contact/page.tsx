@@ -18,6 +18,7 @@ import {
   Icon,
   useColorModeValue,
   Stack,
+  useToast,
 } from '@chakra-ui/react'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import { FallInPlace } from '#components/motion/fall-in-place'
@@ -33,6 +34,8 @@ const ContactPage: NextPage = () => {
     message: ''
   })
 
+  const toast = useToast()
+
   const cardBg = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.600')
   const sidebarBg = useColorModeValue('gray.50', 'gray.900')
@@ -47,7 +50,26 @@ const ContactPage: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
+
+    // Show success toast
+    toast({
+      title: 'Message sent successfully!',
+      description: 'Thank you for contacting us. We\'ll get back to you soon.',
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+      position: 'top-right',
+    })
+
+    // Clear the form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    })
+
+    // TODO: Integrate with API later
     console.log('Form submitted:', formData)
   }
 
@@ -58,9 +80,9 @@ const ContactPage: NextPage = () => {
       <Box position="relative" overflow="hidden" minH="100vh" bg={useColorModeValue('gray.50', 'gray.900')}>
       <BackgroundGradient height="100%" zIndex="-1" />
       
-      <Container maxW="container.xl" pt={{ base: 20, lg: 40 }} pb="20">
+      <Container maxW="container.xl" pt={{ base: 32, lg: 40 }} pb="20">
         <FallInPlace delay={0.15} >
-          <VStack spacing="12" align="stretch">
+          <VStack spacing="8" align="stretch">
             {/* Header Section */}
             <Box textAlign="center">
               <Text 
@@ -69,19 +91,19 @@ const ContactPage: NextPage = () => {
                 color="primary.500" 
                 textTransform="uppercase" 
                 letterSpacing="wider"
-                mb="4"
+                mb={["2", "4", "4", "4"]}
               >
                 Get in Touch
               </Text>
               <Heading 
-                size="4xl" 
-                mb="6"
+                fontSize={{ base: '4xl', md: '4xl', lg: '6xl' }}
+                mb={["2", "4", "4", "4"]}
                 bgGradient="linear(to-r, primary.400, primary.600)"
                 bgClip="text"
               >
                 Contact Us
               </Heading>
-              <Text color="muted" fontSize="xl" maxW="2xl" mx="auto">
+              <Text color="muted" fontSize={{ base: 'lg', md: 'xl' }} maxW="2xl" mx="auto">
                 Have questions about our products or ready to get in touch? Send us a message and we'll respond as soon as possible.
               </Text>
             </Box>
@@ -101,7 +123,7 @@ const ContactPage: NextPage = () => {
                   >
                     <VStack spacing="8" align="stretch">
                       <Box>
-                        <Heading size="lg" mb="4">
+                        <Heading fontSize={{ base: 'lg', md: 'xl' }} mb="4">
                           Let's Start a Conversation
                         </Heading>
                         <Text color="muted" mb="6">
@@ -123,13 +145,13 @@ const ContactPage: NextPage = () => {
                           <Box>
                             <Text fontWeight="semibold" mb="1">Email</Text>
                             <Text color="muted" fontSize="sm">
-                              corporate@bevconzentry.com
+                              mktg_support@bevconzentry.com
                             </Text>
                           </Box>
                         </HStack>
 
                         {/* Phone */}
-                        <HStack spacing="4">
+                        {/* <HStack spacing="4">
                           <Box
                             bg="primary.500"
                             p="3"
@@ -144,7 +166,7 @@ const ContactPage: NextPage = () => {
                               +91 88855 64040
                             </Text>
                           </Box>
-                        </HStack>
+                        </HStack> */}
 
                         {/* Address */}
                         <HStack spacing="4">

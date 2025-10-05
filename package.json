@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.10.1",
     "@chakra-ui/theme-tools": "^2.2.5",
     "@emotion/react": "^11.13.3",
@@ -18,7 +19,10 @@
     "@saas-ui/auth": "^3.4.0",
     "@saas-ui/react": "^2.9.0",
     "@svgr/webpack": "^8.1.0",
+    "chakra-ui-carousel": "^1.0.14",
     "date-fns": "^4.1.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.11.1",
     "motion": "^12.23.15",
     "next": "^14.2.14",

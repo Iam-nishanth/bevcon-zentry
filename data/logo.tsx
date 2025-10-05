@@ -8,7 +8,8 @@ export const Logo: React.FC<HTMLChakraProps<'svg'>> = (props) => {
       as={BevconZentry}
       key="Bevcon Zentry"
       color={color}
-      width={150}
+      width={[150, 220]}
+      height={120}
       display="block"
     />
   )

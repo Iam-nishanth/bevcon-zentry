@@ -58,11 +58,29 @@ const SectionTitle = {
         spacing: [2, null, 3],
       },
       title: {
-        fontSize: { base: '2xl', lg: '4xl' },
+        fontSize: { base: '2xl', md: '3xl', lg: '4xl' },
+        fontWeight: 'bold',
+        lineHeight: 'tight',
       },
       description: {
-        fontSize: { base: 'xl', lg: '2xl' },
+        fontSize: { base: 'lg', md: 'xl', lg: '2xl' },
+        lineHeight: 'tall',
       },
+    '2xl': {
+      wrapper: {
+        mb: 16,
+        spacing: [3, null, 4],
+      },
+      title: {
+        fontSize: { base: '3xl', md: '4xl', lg: '6xl', xl: '6xl' },
+        fontWeight: 'bold',
+        lineHeight: 'tight',
+      },
+      description: {
+        fontSize: { base: 'lg', md: 'xl', lg: '2xl' },
+        lineHeight: 'tall',
+      },
+    },
     },
   },
 }

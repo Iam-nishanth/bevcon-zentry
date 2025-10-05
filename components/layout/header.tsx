@@ -1,4 +1,5 @@
 "use client"
+
 import {
   Box,
   BoxProps,
@@ -33,18 +34,14 @@ export const Header = (props: HeaderProps) => {
       as="header"
       top="0"
       w="full"
-      position="fixed"
-      backdropFilter="blur(5px)"
+      position="absolute"
       zIndex="sticky"
-      borderColor="whiteAlpha.100"
       transitionProperty="common"
       transitionDuration="normal"
       bg={y > height ? bg : ''}
-      boxShadow={y > height ? 'md' : ''}
-      borderBottomWidth={y > height ? '1px' : ''}
       {...props}
     >
-      <Container maxW="container.2xl" px="8" py="4">
+      <Container maxW="container.2xl" px={["15px", "15px", "15px", "15px"]} py={["0", "3", "3", "3"]} >
         <Flex width="full" align="center" justify="space-between">
           <Logo
             onClick={(e) => {

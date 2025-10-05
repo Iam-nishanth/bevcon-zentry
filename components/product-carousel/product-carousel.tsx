@@ -6,6 +6,7 @@ import {
   IconButton,
   useBreakpointValue,
   Image,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 import Slider from 'react-slick'
@@ -13,6 +14,7 @@ import Slider from 'react-slick'
 interface ProductCarouselProps {
   images: string[]
   alt: string
+  height?: string | { base?: string; md?: string; lg?: string }
 }
 
 const settings = {
@@ -26,11 +28,14 @@ const settings = {
   slidesToScroll: 1,
 }
 
-export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt }) => {
+export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt, height = '200px' }) => {
   const [slider, setSlider] = React.useState<Slider | null>(null)
   
   const top = useBreakpointValue({ base: '50%', md: '50%' })
   const side = useBreakpointValue({ base: '10px', md: '10px' })
+  const arrowBg = useColorModeValue('whiteAlpha.900', 'blackAlpha.700')
+  const arrowHoverBg = useColorModeValue('white', 'blackAlpha.600')
+  const arrowColor = useColorModeValue('gray.700', 'gray.100')
 
   if (images.length <= 1) {
     return (
@@ -38,7 +43,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt })
         src={images[0]}
         alt={alt}
         w="full"
-        h="200px"
+        h={height}
         objectFit="cover"
         _hover={{ transform: 'scale(1.05)' }}
         transition="transform 0.3s ease"
@@ -47,7 +52,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt })
   }
 
   return (
-    <Box position="relative" height="200px" width="full" overflow="hidden">
+    <Box position="relative" height={height} width="full" overflow="hidden">
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -70,8 +75,9 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt })
         transform="translate(0%, -50%)"
         zIndex={2}
         size="sm"
-        bg="whiteAlpha.800"
-        _hover={{ bg: 'whiteAlpha.900' }}
+        bg={arrowBg}
+        color={arrowColor}
+        _hover={{ bg: arrowHoverBg }}
         onClick={() => slider?.slickPrev()}
       >
         <BiLeftArrowAlt size="20px" />
@@ -87,8 +93,9 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt })
         transform="translate(0%, -50%)"
         zIndex={2}
         size="sm"
-        bg="whiteAlpha.800"
-        _hover={{ bg: 'whiteAlpha.900' }}
+        bg={arrowBg}
+        color={arrowColor}
+        _hover={{ bg: arrowHoverBg }}
         onClick={() => slider?.slickNext()}
       >
         <BiRightArrowAlt size="20px" />
@@ -97,12 +104,12 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt })
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {images.map((image, index) => (
-          <Box key={index} height="200px" position="relative">
+          <Box key={index} height={height} position="relative">
             <Image
               src={image}
               alt={`${alt} - Image ${index + 1}`}
               w="full"
-              h="200px"
+              h={height}
               objectFit="cover"
               _hover={{ transform: 'scale(1.05)' }}
               transition="transform 0.3s ease"

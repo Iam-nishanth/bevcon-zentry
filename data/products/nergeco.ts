@@ -67,13 +67,13 @@ export const nergecoData: BrandData = {
       subcategory: "Standard Logistics",
       brand: "Nergeco",
       heading: "High-speed flexible doors for standard logistics",
-      description: ` To separate areas within your premises safely and efficiently while reducing maintenance costs when no other special feature is required.
+      description: `Designed for efficient area separation in warehouse and logistics environments, this high-speed door offers reliable performance with minimal maintenance requirements.
 
-Indoors, traffic can be busy and space restricted, increasing the risks of contact every time traffic passes through a door. It is therefore better if the door opens as late as possible and closes again quickly to protect the different areas within your premises without at the same time increasing risks caused by rubbing against the curtain.
-The Nergeco Entrematic high performance door for standard logistics is a roller door to save space at floor and lintel level, and its numerous flexible stiffeners uniformly distribute pressure over the whole of the frame to withstand strong draughts and increase insulation. Its flexible closing edge can be distorted both vertically and horizontally and is responsive over a height of 15 inches reducing repair and maintenance costs.
-Each time it opens, it frees access at the last moment without posing a risk if touched, then closes again at the same speed - twice as fast as traditional doors - without endangering users, vehicles or packages. It therefore reduces accidents and production stoppages, but by also shortening the time it is open, energy consumption for heating or cold production is reduced between two areas with different environments.
-Designed for corrosive environments, the frame and mechanisms of the Nergeco Entrematic high performance high-speed flexible door for standard logistics are in multi-composite materials which are more resistant to corrosion than stainless steel. Multi-composite, because a formulation and design specific to each mechanical and kinematic function significantly increases its resistance to galling, twisting and denting when compared with welded solutions.
-They are smooth and wear-resistant without the paint or crevices inherent in welded structures. The mechanisms are more corrosion-resistant than 316L stainless steel. The toughness of the uprights, their ability to absorb an impact without becoming permanently distorted, and the absence of paint guarantees a durable, corrosion-free appearance.
+This intelligent door system features a compact roller design that maximizes floor and ceiling clearance. The flexible curtain incorporates multiple stiffeners that evenly distribute structural loads across the frame, providing excellent draft protection and thermal insulation. The responsive closing edge can flex in multiple directions and detects obstacles across a 15-inch span, minimizing damage and repair needs.
+
+Operating at speeds twice that of conventional industrial doors, it opens precisely when needed and closes rapidly to minimize exposure time. This intelligent timing reduces workplace accidents while significantly lowering energy consumption in climate-controlled facilities.
+
+The door's construction utilizes advanced multi-composite materials engineered to outperform stainless steel in corrosive environments. Each component is specifically formulated for its mechanical function, offering superior resistance to wear, impact, and environmental degradation. The smooth, paint-free surfaces eliminate crevices where contaminants can accumulate, while the robust uprights maintain structural integrity even after repeated impacts.
 `,
       specifications: {
         opening_speed: "2.0 m/s",
@@ -112,12 +112,13 @@ They are smooth and wear-resistant without the paint or crevices inherent in wel
       subcategory: "Food Processing",
       brand: "Nergeco",
       heading: "Easy-to-clean multi-composite high-speed doors reducing health risks in the food processing industry",
-      description: ` Multi-composite frame more corrosion-resistant than stainless steel
+      description: `Engineered specifically for demanding food processing environments, this high-speed door combines superior hygiene standards with exceptional durability.
 
-Designed originally for the most corrosive food-processing environments, the frame and mechanisms of the Nergeco high performance high-speed flexible door are in multi-composite materials which are 45% more corrosion-resistant than stainless steel. Multi-composite, because a formulation and design developed specifically for each mechanical and kinematic function significantly increases its resistance to galling, twisting and denting when compared with welded solutions. They are smooth and wear-resistant without the paint or crevices inherent in welded structures. They can be pressure-washed without the need for dismantling. Allowing the water to run down and naturally ventilated, they dry quickly and are therefore completely suited to your dry or wet processes.
-The mechanisms are also in multi-composite materials which are more corrosion-resistant than 316L stainless steel. The toughness of the uprights, their ability to absorb an impact without becoming permanently distorted, and the absence of paint guarantees a durable, corrosion-free appearance.
-Lastly, the numerous flexible stiffeners of the Nergeco Intelligent Curtain, integrated under sealed welds, provide uniform distribution of pressure over the whole frame to stand up to any overpressure. The Intelligent Curtain increases insulation and its flexible closing edge can be distorted both vertically and horizontally and is responsive over a height of 15 inches reducing repair and maintenance costs.
-Each time it opens, it frees access at the last moment without posing a risk if touched, then closes again at the same speed - twice as fast as traditional doors - without endangering users, vehicles or packages. It therefore reduces accidents and production stoppages, but by also reducing the time it is open, it reduces the energy consumption needed for your controlled atmosphere and the risks of airborne contamination by up to 32% on each cycle!
+The door system features advanced composite materials that exceed 316L stainless steel in corrosion resistance. Each structural element is purpose-engineered for its specific function, providing enhanced protection against wear, chemical exposure, and mechanical stress. The seamless, paint-free construction eliminates potential contamination harbors and supports thorough pressure washing without disassembly.
+
+The self-draining design and natural ventilation ensure rapid drying, making it suitable for both wet and dry processing environments. The Intelligent Curtain system incorporates sealed flexible stiffeners that distribute pressure uniformly across the frame structure, maintaining reliable operation under varying conditions.
+
+Operating at double the speed of traditional industrial doors, the system minimizes exposure time during each cycle. The responsive safety edge detects obstacles across a 15-inch height range, ensuring safe operation around personnel and equipment. This rapid cycling reduces energy loss in climate-controlled spaces and decreases airborne contamination risk by up to 32% per operation cycle.
 `,
       specifications: {
         opening_speed: "2.5 m/s",
@@ -155,12 +156,13 @@ Each time it opens, it frees access at the last moment without posing a risk if 
       subcategory: "Clean Processes",
       brand: "Nergeco",
       heading: "Safe high-speed flexible doors with enhanced sealing and asepsis. They combine pressure resistance, full access for cleaning and a minimum opening time to reduce sanitary risks ",
-      description: ` Washable multi-composite structure, the curtain can withstand up to 40 Pa
+      description: `Designed for pharmaceutical and cleanroom applications, this door system combines high-pressure resistance with cleanability requirements.
 
-Developed both in accordance with the rigorous constraints of pharmaceutical environments and the most corrosive atmospheres, the new materials for the frames and mechanisms of the high-speed flexible doors for clean processes are made from multi-composite materials which offer a number of benefits. Multi-composite, because a formulation and design specific to each mechanical and kinematic function significantly increases its resistance to tearing, twisting and denting relative to weld-fabricated solutions. They are smooth and wear-resistant without the paint or crevices inherent in welded structures. Lastly, these materials are more corrosion-resistant than 316L stainless steel making them fully compliant with the requirements of clean environments.
-Fully built-in to the frame, the Nergeco Intelligent Curtain increases insulation and sealing without a complicated system trapping it in its slides: it remains free in the open shape of the slides which are kept completely accessible for cleaning. On each opening cycle, it slides without friction then, with the flexible door closed again, lays flat against the inside of the slides through the action of pressure. Its numerous stiffeners then distribute the pressure resistance force uniformly over the whole of the structure.
-Free and flexible, its closure edge can be distorted both vertically and horizontally. With no heavy threshold bar or rigid transverse movement detection device, it is directly responsive over 15 in height. So, on each access, it opens at the last moment without posing a risk if touched, then closes again at the same speed - twice as fast as traditional doors - without endangering users or packages. It therefore reduces accidents and production stoppages, but by also reducing the time it is open, it reduces energy consumption and the risks of airborne contamination.
-Our high-speed flexible doors for clean processes are available with three sealing systems to limit the leakage rate to the value required by the operating pressure of up to 40 pascal to suit each project.
+The door construction utilizes specialized composite materials that meet stringent cleanroom standards while exceeding 316L stainless steel in corrosion resistance. Each component is engineered for specific mechanical functions, offering superior resistance to tearing, deformation, and environmental stress. The smooth, seamless surfaces eliminate contamination traps and support comprehensive cleaning protocols.
+
+The Intelligent Curtain integrates directly into the frame structure without complex retention mechanisms, maintaining fully accessible slide channels for cleaning. During operation, the curtain moves friction-free through the guides and seals against the frame under pressure differential. Multiple internal stiffeners distribute pressure resistance forces evenly across the structure, supporting differential pressures up to 40 Pa.
+
+The flexible safety edge responds to contact across a 15-inch detection zone without heavy bars or rigid sensors. Operating at twice conventional door speeds, it minimizes open-door duration to reduce contamination risk and energy loss. Three available sealing configurations allow pressure differential customization for specific cleanroom requirements.
 `,
       specifications: {
         opening_speed: "1.8 m/s",
@@ -198,7 +200,7 @@ Our high-speed flexible doors for clean processes are available with three seali
       subcategory: "Cold Chain",
       brand: "Nergeco",
       heading: "Increase heat insulation and reduce maintenance costs the whole length of a complex and stringent cold chain ",
-      description: "A wide selection of isothermal high-speed doors, each suited to a precise cold room configuration ",
+      description: "Specialized thermal door systems engineered for temperature-controlled environments, providing superior insulation while maintaining high-speed operation. These doors feature advanced thermal barrier construction optimized for cold chain management, from refrigerated storage to deep-freeze applications. The isothermal design minimizes thermal bridging and reduces energy consumption in critical temperature zones.",
       specifications: {
         opening_speed: "1.5 m/s",
         closing_speed: "1.5 m/s",
@@ -235,28 +237,22 @@ Our high-speed flexible doors for clean processes are available with three seali
       subcategory: "Emergency Exits",
       brand: "Nergeco",
       heading: "The combination of better insulation, easy and safe accesses and full adaptation to your process ",
-      description: ` Effective high-speed doors giving automatic access to emergency exits when needed
+      description: `Dual-function door system combining daily operational efficiency with emergency egress capability.
 
-The Emergency Exit versions of Nergeco Entrematic high-speed flexible doors are both an emergency evacuation path when needed as well as effective high-performance productivity doors for each process.
-Operating principle, when the door is closed, just pressing the standard "emergency open" button or anywhere on the curtain, opens the door (patented). Pressing the curtain pushes it into contact with a rear planar light barrier which detects an anomaly and triggers opening (patented).
-Protection: opening is also triggered in the following cases:
-• failure of power supply from the cabinet or the main power supply,
-• failure of a motor component or safety device (photoelectric cell for example),
-• triggering of a general alarm coupled to the cabinet.
-Effectiveness: in all cases, the door clears the whole of the floor surface up to the maximum height without any component remaining suspended across the access, and remains open until reset by your authorised personnel using a special key.
-Reliability: if triggered in the absence of a power supply, a counterweight is released which opens the door under natural gravity, without the use of a backup battery which is given to ageing.
+This unique door design serves as both a high-performance industrial access point and a certified emergency exit. The emergency activation system responds to multiple triggers: dedicated emergency buttons, direct curtain pressure, power failures, component malfunctions, or facility alarm systems. Upon activation, the door fully clears the opening and remains open until manually reset by authorized personnel.
 
-In standard logistics
-For efficiently separating internal areas while reducing maintenance costs, when no special feature is required other than acting as an Emergency Exit.
-High-performance multi-composite frame, intelligent curtain up to 13x13 ft.
+The fail-safe mechanism employs a gravity-operated counterweight system that functions without electrical power or backup batteries, ensuring reliable emergency operation. The patented curtain-press activation allows evacuation even when approaching the door from either direction.
 
-In food processes
-Designed for highly-partitioned food processes, these automatic flexible doors incorporate the new Nergeco Intelligent Curtain in their frames in multi-composite materials which are more corrosion-resistant than 316L stainless steel. In the Emergency Exit version, the frame may still be high-pressure washed, and the curtain is identical to those in the other food processing versions: smooth, sealed and fully hygienic!
-High-performance multi-composite frame, intelligent curtain up to 13x13 ft.
+Available in multiple configurations to suit different environments:
 
-In clean processes
-In laboratory processes, this high-speed flexible door is suited to clean rooms and their hygiene protocols, while offering the Emergency Exit function to make best use of laboratory floor space.
-High-performance multi-composite frame, intelligent curtain up to 13x13 ft. `,
+• Standard Logistics Version: Multi-composite frame construction, curtain dimensions up to 13x13 ft, optimized for general industrial applications
+
+• Food Processing Version: Enhanced corrosion-resistant materials, pressure-washable construction, sealed and hygienic curtain design suitable for food safety environments
+
+• Cleanroom Version: Pharmaceutical-grade materials and construction, compatible with strict hygiene protocols while maintaining emergency egress functionality
+
+All versions maintain EN 12453 compliance for safety and emergency applications.
+`,
       specifications: {
         opening_speed: "2.2 m/s",
         closing_speed: "0.5 m/s",
@@ -283,39 +279,73 @@ High-performance multi-composite frame, intelligent curtain up to 13x13 ft. `,
         "/products/nergeco/Power Out Opening/Emergency opening of this Nergeco high-speed door for the cosmetics industry simply be pressing on the curtain.jpg"
       ]
     },
-    // {
-    //   id: "nergeco-006",
-    //   title: "External High-Speed Flexible Door T-Series",
-    //   model: "T-2800",
-    //   sku: "NER-T2800",
-    //   category: "High Speed Doors",
-    //   subcategory: "External Doors",
-    //   brand: "Nergeco",
-    //   specifications: {
-    //     opening_speed: "2.8 m/s",
-    //     closing_speed: "2.8 m/s",
-    //     max_width: "7000 mm",
-    //     max_height: "7000 mm",
-    //     wind_resistance: "Class 4 (up to 120 km/h)",
-    //     temperature_range: "-30°C to +70°C"
-    //   },
-    //   features: [
-    //     "Trekking folding technology",
-    //     "Superior wind resistance",
-    //     "Weather protection",
-    //     "Robust construction",
-    //     "All-weather operation"
-    //   ],
-    //   applications: [
-    //     "Loading dock entrances",
-    //     "Warehouse exteriors",
-    //     "Industrial building access"
-    //   ],
-    //   tags: ["Weather Resistant", "High Wind", "External Use"],
-    //   image: [
-    //     "/products/nergeco/SL/High-speed flexible door lined with a fire door (SL) .jpg",
-    //     "/products/nergeco/SL/Clean and contemporary design, shapes facilitating maintenance for this high-speed door (SL) .jpg"
-    //   ]
-    // }
+    {
+      id: "nergeco-006",
+      title: "External flexible folding doors T-series",
+      model: "T-Series",
+      sku: "NER-TSERIES",
+      category: "High Speed Doors",
+      subcategory: "External Doors",
+      brand: "Nergeco",
+      heading: "External flexible folding doors",
+      description: `Advanced folding door technology engineered for extreme weather resistance and exterior applications.
+
+The Trekking system employs a distributed stiffener design spanning the full curtain height, creating uniform tension from top to bottom. This architecture provides exceptional wind resistance up to 88 mph while maintaining weathertight sealing. The distributed load design prevents jamming and curtain flutter even under high wind loads, without requiring heavy bottom bars that pose safety risks.
+
+The flexible closure edge responds to contact in all directions across a 15-inch detection zone. This patented safety system allows the door to open precisely when needed and close immediately afterward at high speed—cutting building exposure time and reducing air exchange energy losses by up to 32% compared to conventional doors.
+
+The folding curtain design accommodates insulation panels of varying thicknesses, supporting multiple thermal and acoustic requirements. Available options include cold storage barriers, high-temperature oven doors, and acoustic barriers for noise control.
+
+Frame construction options include steel for large spans (up to 2,150 sq ft) or advanced composite materials for openings up to 20x20 ft. The composite option provides superior corrosion resistance and thermal break properties. Motor configurations include transom-integrated or protected external mounting for simplified maintenance access.
+
+Customization options include: variable curtain transparency, adjustable insulation thickness, manual operation capability, and multiple transom access configurations. Oversized guide channels allow continued operation even with damaged stiffeners, maximizing uptime.
+`,
+      specifications: {
+        opening_speed: "2.8 m/s",
+        closing_speed: "2.8 m/s",
+        max_width: "7000 mm",
+        max_height: "7000 mm",
+        wind_resistance: "Up to 88 mph",
+        temperature_range: "-30°C to +70°C"
+      },
+      features: [
+        "Trekking folding technology",
+        "Superior wind resistance",
+        "Better insulation",
+        "Flexible closure edge",
+        "Intelligent Curtain technology",
+        "Weatherproofing",
+        "Corrosion-resistant materials",
+        "Easy maintenance",
+        "Customizable options"
+      ],
+      applications: [
+        "Loading dock entrances",
+        "Warehouse exteriors",
+        "Industrial building access",
+        "Shipyards",
+        "Mining workshops",
+        "Helicopter maintenance",
+        "Cold logistics",
+        "Recycling sites"
+      ],
+      tags: ["Weather Resistant", "High Wind", "External Use", "Windproof", "Insulated", "Acoustic", "Panoramic View"],
+      image: [
+        "/products/nergeco/T-Series/Large-dimension-NERGECO-T-ENDURO-5-exterior-high-speed-flexible-door.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-5-flexible-automatic-door-with-double-skin-curtain.jpg",
+        "/products/nergeco/T-Series/Two-panoramic-transparent-rows-for-this-NERGECO-T-ENDURO-5-automatic-door.jpg",
+        "/products/nergeco/T-Series/The-double-wall-curtain-of-this-Nergeco-Entrematic-flexible-door-closes-an-air-lock-protecting-cold-rooms.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-flexible-doors-for-outside-exposure-and-strong-winds-in-shipyards.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-flexible-door-with-high-wind-resistance-installed-on-a-mining-maintenance-workshop.jpg",
+        "/products/nergeco/T-Series/Automatic-double-acoustic-wall-NERGECO-T-ENDURO-2-folding-flexible-doors-for-helicopter-maintenance-workshop-Marine-Nationale.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-flexible-doors-with-insect-curtains-to-preserve-natural-ventilation.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-doors-installed-facing-the-North-Atlantic-on-the-premises-of-a-cold-logistics-company.jpg",
+        "/products/nergeco/T-Series/Successful-integration-of-NERGECO-T-ENDURO-2-high-speed-doors-on-wooden-framed-building.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-doors-with-total-panoramic-view-for-maximum-natural-lighting.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-folding-doors.jpg",
+        "/products/nergeco/T-Series/Each-NERGECO-T-ENDURO-2-high-speed-flexible-door-is-made-to-measure-for-each-building-here-in-Poland-on-a-recycling-site.jpg",
+        "/products/nergeco/T-Series/NERGECO-T-ENDURO-2-high-speed-flexible-doors-chosen-for-their-wind-resistance-and-their-panoramic-transparency.jpg"
+      ]
+    }
   ]
 }

@@ -7,7 +7,7 @@ export default function ProductsLayout({
   children: React.ReactNode
 }) {
   return (
-    <MarketingLayout>
+    <MarketingLayout noFooter>
       <Box minH="100vh" display="flex" flexDirection="column">
         {children}
       </Box>

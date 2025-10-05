@@ -16,10 +16,11 @@ interface LayoutProps {
   announcementProps?: AnnouncementBannerProps
   headerProps?: HeaderProps
   footerProps?: FooterProps
+  noFooter?: boolean
 }
 
 export const MarketingLayout: React.FC<LayoutProps> = (props) => {
-  const { children, announcementProps, headerProps, footerProps } = props
+  const { children, announcementProps, headerProps, footerProps, noFooter } = props
   return (
     <Box>
       <SkipNavLink>Skip to content</SkipNavLink>
@@ -29,7 +30,7 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
         <SkipNavContent />
         {children}
       </Box>
-      <Footer {...footerProps} />
+      {noFooter ? null : <Footer {...footerProps} />}
     </Box>
   )
 }

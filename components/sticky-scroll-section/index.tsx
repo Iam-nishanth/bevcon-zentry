@@ -56,7 +56,7 @@ const defaultItems: StickyScrollItem[] = [
     title: 'Dedicated Support',
     description:
       'Our support specialists stay closely aligned with your operations, offering tailored service agreements, proactive performance monitoring, and rapid-response repair teams. We combine on-site expertise with remote diagnostics to resolve issues quickly and keep your critical infrastructure dependable.',
-    imageSrc: '/home/why-choose/GIS-support.jpg',
+    imageSrc: '/home/why-choose/Comprehensive-support.png',
   },
 ]
 
@@ -65,143 +65,57 @@ const MotionBox = motion.div
 const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
   items = defaultItems,
 }) => {
-  const containerRef = React.useRef<HTMLDivElement | null>(null)
-  const [activeIndex, setActiveIndex] = React.useState(0)
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
-  })
-
-  const sectionIndex = useTransform(
-    scrollYProgress,
-    [0, 0.8],
-    [0, items.length - 1],
-  )
-
-  useMotionValueEvent(sectionIndex, 'change', (latest) => {
-    const clamped = Math.min(Math.max(latest, 0), items.length - 1)
-    setActiveIndex(Math.round(clamped))
-  })
-
   const bgGradient = useColorModeValue(
     'linear(to-br, gray.50, gray.100)',
     'linear(to-br, gray.900, gray.800)',
   )
 
   return (
-    <Box
-      ref={containerRef}
-      minH={`${(items.length + 2) * 100}vh`}
-      bgGradient={bgGradient}
-      position="relative"
-    >
-      {/* Sticky container */}
-      <Box
-        position="sticky"
-        top={0}
-        minH="100vh"
-        display="flex"
-        alignItems="center"
-      >
-        <Container maxW="container.xl">
-          <Flex
-            direction={{ base: 'column', lg: 'row' }}
-            minH="100vh"
-            align="center"
-            gap={{ base: 10, lg: 20 }}
-          >
-            {/* Left content */}
+    <>
+      {/* Mobile/Tablet Layout */}
+      <Box display={{ base: 'block', lg: 'none' }}>
+        <Box
+          bgGradient={bgGradient}
+          py={16}
+        >
+          {items.map((item, index) => (
             <Box
-              flex={1}
-              display="flex"
-              flexDirection="column"
-              justifyContent="center"
-              minH="100vh"
-              py={10}
+              key={item.id}
+              mb={index < items.length - 1 ? 16 : 0}
             >
-              {/* Section title */}
-              <Box mb={6}>
-                <Text
-                  fontSize="lg"
-                  fontWeight="semibold"
-                  color="primary.500"
-                  mb={3}
-                >
-                  Why Choose Bevcon Zentry
-                </Text>
-              </Box>
-
-              {/* Animated sections */}
-              {items.map((item, index) => (
-                <MotionBox
-                  key={item.id}
-                  style={{
-                    position: activeIndex === index ? 'static' : 'absolute',
-                    opacity: activeIndex === index ? 1 : 0,
-                  }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{
-                    opacity: activeIndex === index ? 1 : 0,
-                    scale: activeIndex === index ? 1 : 0.8,
-                    y: activeIndex === index ? 0 : 20,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.4, 0, 0.2, 1],
-                  }}
-                >
-                  <Box>
+              <Container maxW="container.xl">
+                <Flex direction="column" gap={8} align="center">
+                  {/* Content */}
+                  <Box textAlign="center" maxW="lg">
                     <Heading
-                      fontSize="4xl"
+                      fontSize={{ base: '2xl', md: '3xl' }}
                       fontWeight="extrabold"
-                      mb={6}
+                      mb={4}
                       color={useColorModeValue('gray.900', 'white')}
                       lineHeight="shorter"
                     >
                       {item.title}
                     </Heading>
                     <Text
-                      fontSize="lg"
+                      fontSize={{ base: 'md', md: 'lg' }}
                       color={useColorModeValue('gray.500', 'gray.400')}
                       lineHeight="relaxed"
-                      maxW="lg"
                     >
                       {item.description}
                     </Text>
                   </Box>
-                </MotionBox>
-              ))}
-            </Box>
 
-            {/* Right image */}
-            <Box
-              flex={1}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              minH="100vh"
-              py={10}
-            >
-              <Box position="relative" w="full" maxW="600px" h="480px">
-                {items.map((item, index) => (
-                  <MotionBox
-                    key={item.id}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                    }}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{
-                      opacity: activeIndex === index ? 1 : 0,
-                      scale: activeIndex === index ? 1 : 0.9,
-                      rotateY: activeIndex === index ? 0 : 10,
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.4, 0, 0.2, 1],
-                      delay: activeIndex === index ? 0.1 : 0,
-                    }}
+                  {/* Image */}
+                  <Box
+                    position="relative"
+                    w="full"
+                    maxW={{ base: '400px', md: '500px' }}
+                    h={{ base: '250px', md: '350px' }}
+                    borderRadius="2xl"
+                    overflow="hidden"
+                    shadow="xl"
+                    border="1px"
+                    borderColor={useColorModeValue('gray.200', 'gray.700')}
                   >
                     <Image
                       src={item.imageSrc}
@@ -209,44 +123,199 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                       w="full"
                       h="full"
                       objectFit="cover"
-                      borderRadius="2xl"
-                      shadow="2xl"
-                      border="1px"
-                      borderColor={useColorModeValue('gray.200', 'gray.700')}
                     />
-                  </MotionBox>
-                ))}
+                  </Box>
+                </Flex>
+              </Container>
+            </Box>
+          ))}
+        </Box>
+      </Box>
 
-                {/* Progress indicator */}
-                <Box
-                  position="absolute"
-                  bottom={-12}
-                  left="50%"
-                  transform="translateX(-50%)"
-                  display="flex"
-                  gap={2}
-                >
-                  {items.map((_, index) => (
+      {/* Desktop Sticky Layout */}
+      <Box display={{ base: 'none', lg: 'block' }}>
+        {/* Desktop Scroll Logic - Only runs when desktop layout is active */}
+        {(() => {
+          const containerRef = React.useRef<HTMLDivElement | null>(null)
+          const [activeIndex, setActiveIndex] = React.useState(0)
+
+          const { scrollYProgress } = useScroll({
+            target: containerRef,
+            offset: ['start start', 'end end'],
+          })
+
+          const sectionIndex = useTransform(
+            scrollYProgress,
+            [0, 0.8],
+            [0, items.length - 1],
+          )
+
+          useMotionValueEvent(sectionIndex, 'change', (latest) => {
+            const clamped = Math.min(Math.max(latest, 0), items.length - 1)
+            setActiveIndex(Math.round(clamped))
+          })
+
+          return (
+            <Box
+              ref={containerRef}
+              minH={`${(items.length + 2) * 100}vh`}
+              bgGradient={bgGradient}
+              position="relative"
+            >
+              <Box
+                position="sticky"
+                top={0}
+                minH="100vh"
+                display="flex"
+                alignItems="center"
+              >
+                <Container maxW="container.xl">
+                  <Flex
+                    direction="row"
+                    minH="100vh"
+                    align="center"
+                    gap={20}
+                  >
+                    {/* Left content */}
                     <Box
-                      key={index}
-                      w={activeIndex === index ? '24px' : '8px'}
-                      h="8px"
-                      borderRadius="full"
-                      bg={
-                        activeIndex === index
-                          ? 'primary.500'
-                          : useColorModeValue('gray.300', 'gray.600')
-                      }
-                      transition="all 0.3s ease"
-                    />
-                  ))}
-                </Box>
+                      flex={1}
+                      display="flex"
+                      flexDirection="column"
+                      justifyContent="center"
+                      minH="100vh"
+                      py={10}
+                    >
+                      {/* Section title */}
+                      <Box mb={6}>
+                        <Text
+                          fontSize="lg"
+                          fontWeight="semibold"
+                          color="primary.500"
+                          mb={3}
+                        >
+                          Why Choose Bevcon Zentry
+                        </Text>
+                      </Box>
+
+                      {/* Animated sections */}
+                      {items.map((item, index) => (
+                        <MotionBox
+                          key={item.id}
+                          style={{
+                            position: activeIndex === index ? 'static' : 'absolute',
+                            opacity: activeIndex === index ? 1 : 0,
+                          }}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{
+                            opacity: activeIndex === index ? 1 : 0,
+                            scale: activeIndex === index ? 1 : 0.8,
+                            y: activeIndex === index ? 0 : 20,
+                          }}
+                          transition={{
+                            duration: 0.6,
+                            ease: [0.4, 0, 0.2, 1],
+                          }}
+                        >
+                          <Box>
+                            <Heading
+                              fontSize="4xl"
+                              fontWeight="extrabold"
+                              mb={6}
+                              color={useColorModeValue('gray.900', 'white')}
+                              lineHeight="shorter"
+                            >
+                              {item.title}
+                            </Heading>
+                            <Text
+                              fontSize="lg"
+                              color={useColorModeValue('gray.500', 'gray.400')}
+                              lineHeight="relaxed"
+                              maxW="lg"
+                            >
+                              {item.description}
+                            </Text>
+                          </Box>
+                        </MotionBox>
+                      ))}
+                    </Box>
+
+                    {/* Right image */}
+                    <Box
+                      flex={1}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      minH="100vh"
+                      py={10}
+                    >
+                      <Box position="relative" w="full" maxW="600px" h="480px">
+                        {items.map((item, index) => (
+                          <MotionBox
+                            key={item.id}
+                            style={{
+                              position: 'absolute',
+                              inset: 0,
+                            }}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{
+                              opacity: activeIndex === index ? 1 : 0,
+                              scale: activeIndex === index ? 1 : 0.9,
+                              rotateY: activeIndex === index ? 0 : 10,
+                            }}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.4, 0, 0.2, 1],
+                              delay: activeIndex === index ? 0.1 : 0,
+                            }}
+                          >
+                            <Image
+                              src={item.imageSrc}
+                              alt={item.title}
+                              w="full"
+                              h="full"
+                              objectFit="cover"
+                              borderRadius="2xl"
+                              shadow="2xl"
+                              border="1px"
+                              borderColor={useColorModeValue('gray.200', 'gray.700')}
+                            />
+                          </MotionBox>
+                        ))}
+
+                        {/* Progress indicator */}
+                        <Box
+                          position="absolute"
+                          bottom={-12}
+                          left="50%"
+                          transform="translateX(-50%)"
+                          display="flex"
+                          gap={2}
+                        >
+                          {items.map((_, index) => (
+                            <Box
+                              key={index}
+                              w={activeIndex === index ? '24px' : '8px'}
+                              h="8px"
+                              borderRadius="full"
+                              bg={
+                                activeIndex === index
+                                  ? 'primary.500'
+                                  : useColorModeValue('gray.300', 'gray.600')
+                              }
+                              transition="all 0.3s ease"
+                            />
+                          ))}
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Flex>
+                </Container>
               </Box>
             </Box>
-          </Flex>
-        </Container>
+          )
+        })()}
       </Box>
-    </Box>
+    </>
   )
 }
 

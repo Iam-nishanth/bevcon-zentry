@@ -107,6 +107,66 @@ const industries: { [key: string]: Industry } = {
       'Automated access systems',
       'Food-safe materials throughout'
     ]
+  },
+  cargo: {
+    title: 'Cargo & Freight Hubs',
+    description: 'Support high-volume cargo terminals with rapid throughput, weather protection, and safe loading operations.',
+    imageSrc: '/home/highspeed doors.jpg',
+    category: 'Transportation & Logistics',
+    benefits: [
+      'Fast turnaround at busy docks',
+      'Weather-tight sealing for freight',
+      'Improved personnel and vehicle safety',
+      'Energy-efficient temperature control',
+      'Durable solutions for heavy traffic'
+    ],
+    solutions: [
+      'High-speed logistics doors',
+      'Telescopic dock levellers',
+      'Impact-resistant sectional closures',
+      'Automated dock shelters',
+      'Integrated traffic management systems'
+    ]
+  },
+  automotive: {
+    title: 'Automotive & Mobility',
+    description: 'Enable efficient vehicle production, testing, and showroom operations with tailored access and safety solutions.',
+    imageSrc: '/home/Industrial Bay Doors.png',
+    category: 'Manufacturing & Assembly',
+    benefits: [
+      'Separation of production and display areas',
+      'Controlled environments for paint and assembly',
+      'Dust and fume mitigation',
+      'Safe vehicle and equipment movement',
+      'Compliance with safety standards'
+    ],
+    solutions: [
+      'High-speed clean room doors',
+      'Fold-up industrial doors',
+      'Fire-rated roller shutters',
+      'Swing lip dock levellers',
+      'Automated access control gates'
+    ]
+  },
+  steel: {
+    title: 'Steel & Metal Works',
+    description: 'Operate safely around heavy machinery, sparks, and extreme temperatures in steel processing facilities.',
+    imageSrc: '/home/DockLeveller.png',
+    category: 'Heavy Industry',
+    benefits: [
+      'Heat and spark resistant protection',
+      'Reliable performance in harsh environments',
+      'Coverage for oversized openings',
+      'Worker safety and compliance',
+      'Maximum equipment uptime'
+    ],
+    solutions: [
+      'Heavy-duty insulated shutters',
+      'High-capacity dock levellers',
+      'Industrial high-speed doors',
+      'Fire-rated containment doors',
+      'Custom fold-up barriers'
+    ]
   }
 }
 

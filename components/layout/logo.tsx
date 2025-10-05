@@ -13,11 +13,9 @@ export interface LogoProps {
 export const Logo = ({ href = '/', onClick }: LogoProps) => {
   let logo
   if (siteConfig.logo) {
-    // Control the logo size via width, let height follow the viewBox
     logo = (
       <Box
         as={siteConfig.logo}
-        w={{ base: '100px', md: '100px' }}
         mt="-2px"
       />
     )

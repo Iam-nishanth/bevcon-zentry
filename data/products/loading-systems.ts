@@ -169,7 +169,7 @@ export const loadingSystemsData: BrandData = {
         "/products/loading-systems/SL/ImageContent_232_durable.png",
         "/products/loading-systems/SL/ImageContent_232_safety.png",
         "/products/loading-systems/SL/ImageContent_232_UserFriendly.png",
-        "/products/loading-systems/SL/pc-levellers.png"
+        // "/products/loading-systems/SL/pc-levellers.png"
       ]
     },
     {
@@ -306,7 +306,7 @@ export const loadingSystemsData: BrandData = {
       image: [
         "/products/loading-systems/CD/ImageContent_253_vankopie.png",
         "/products/loading-systems/CD/ImageContent_253_truckkopie.png",
-        "/products/loading-systems/CD/imagecontent-253-userfriendly.jpg"
+        // "/products/loading-systems/CD/imagecontent-253-userfriendly.jpg"
       ]
     },
     {
