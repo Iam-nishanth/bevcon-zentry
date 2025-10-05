@@ -1,5 +1,4 @@
 import { nergecoData } from './nergeco'
-import { blueGiantData } from './bluegiant'
 import { skbData } from './skb'
 import { loadingSystemsData } from './loading-systems'
 
