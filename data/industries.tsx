@@ -51,7 +51,7 @@ const industries: { [key: string]: Industry } = {
   cold: {
     title: 'Cold Storage',
     description: 'Maintain precise temperature control and energy efficiency in cold storage warehouses and distribution centers.',
-    imageSrc: '/home/Highspeed doors.webp',
+    imageSrc: '/products/nergeco/nergeco-onsite/Cold-storage-nergeco.jpeg',
     category: 'Temperature Controlled',
     benefits: [
       'Superior insulation properties',
@@ -111,7 +111,7 @@ const industries: { [key: string]: Industry } = {
   cargo: {
     title: 'Cargo & Freight Hubs',
     description: 'Support high-volume cargo terminals with rapid throughput, weather protection, and safe loading operations.',
-    imageSrc: '/home/Roller Shutters.png',
+    imageSrc: '/products/nergeco/nergeco-onsite/cargo-nergeco.jpeg',
     category: 'Logistics',
     benefits: [
       'Fast turnaround at busy docks',

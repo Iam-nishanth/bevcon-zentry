@@ -39,9 +39,13 @@ const Navigation: React.FC = () => {
         return (
           <NavLink
             display={['none', null, 'block']}
-            
+            fontWeight="semibold"
+            fontSize={"md"}
             href={href || `/${id}`}
             key={i}
+            _hover={{
+              color: "primary.500",
+            }}
             {...props}
           >
             {props.label}
