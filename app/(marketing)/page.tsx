@@ -230,7 +230,7 @@ const ProductsSection = () => {
           </Text>
         }
         innerWidth="container.xl"
-        columns={[1, 2, 3]}
+        columns={[1, 2, 2]}
         reveal={FallInPlace}
         products={[
           {
@@ -251,15 +251,15 @@ const ProductsSection = () => {
             enquireHref: '/contact',
             delay: 0.3,
           },
-          {
-            title: 'Truck Restraints',
-            description:
-              'Vehicle restraint systems ensuring safe loading and unloading',
-            imageSrc: '/home/product-range/Truck Restraints.jpeg',
-            learnMoreHref: '/products',
-            enquireHref: '/contact',
-            delay: 0.4,
-          },
+          // {
+          //   title: 'Truck Restraints',
+          //   description:
+          //     'Vehicle restraint systems ensuring safe loading and unloading',
+          //   imageSrc: '/home/product-range/Truck Restraints.jpeg',
+          //   learnMoreHref: '/products',
+          //   enquireHref: '/contact',
+          //   delay: 0.4,
+          // },
           {
             title: 'Dock Shelters',
             description:
@@ -278,15 +278,15 @@ const ProductsSection = () => {
             enquireHref: '/contact',
             delay: 0.6,
           },
-          {
-            title: 'Sectional Doors',
-            description:
-              'Versatile overhead doors for warehouses and industrial facilities',
-            imageSrc: '/home/product-range/Sectional-Doors.png',
-            learnMoreHref: '/products',
-            enquireHref: '/contact',
-            delay: 0.7,
-          },
+          // {
+          //   title: 'Sectional Doors',
+          //   description:
+          //     'Versatile overhead doors for warehouses and industrial facilities',
+          //   imageSrc: '/home/product-range/Sectional-Doors.png',
+          //   learnMoreHref: '/products',
+          //   enquireHref: '/contact',
+          //   delay: 0.7,
+          // },
         ]}
       />
     </Box>

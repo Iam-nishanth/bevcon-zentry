@@ -5,16 +5,19 @@ import {
   Container,
   Flex,
   Heading,
+  IconButton,
   Image,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 import {
+  AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from 'framer-motion'
+import { RiArrowDownDoubleFill } from 'react-icons/ri'
 
 import React from 'react'
 
@@ -61,6 +64,7 @@ const defaultItems: StickyScrollItem[] = [
 ]
 
 const MotionBox = motion.div
+const MotionSpan = motion.span
 
 const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
   items = defaultItems,
@@ -74,15 +78,9 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
     <>
       {/* Mobile/Tablet Layout */}
       <Box display={{ base: 'block', lg: 'none' }}>
-        <Box
-          bgGradient={bgGradient}
-          py={16}
-        >
+        <Box bgGradient={bgGradient} py={16}>
           {items.map((item, index) => (
-            <Box
-              key={item.id}
-              mb={index < items.length - 1 ? 16 : 0}
-            >
+            <Box key={item.id} mb={index < items.length - 1 ? 16 : 0}>
               <Container maxW="container.xl">
                 <Flex direction="column" gap={8} align="center">
                   {/* Content */}
@@ -138,6 +136,9 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
         {(() => {
           const containerRef = React.useRef<HTMLDivElement | null>(null)
           const [activeIndex, setActiveIndex] = React.useState(0)
+          const [scrollDirection, setScrollDirection] = React.useState<'down' | 'up'>('down')
+          const [showScrollIndicator, setShowScrollIndicator] = React.useState(false)
+          const prevProgressRef = React.useRef(0)
 
           const { scrollYProgress } = useScroll({
             target: containerRef,
@@ -155,6 +156,73 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
             setActiveIndex(Math.round(clamped))
           })
 
+          useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+            const clamped = Math.min(Math.max(latest, 0), 1)
+            const nextDirection = clamped >= prevProgressRef.current ? 'down' : 'up'
+            if (nextDirection !== scrollDirection) {
+              setScrollDirection(nextDirection)
+            }
+
+            const shouldShow = clamped > 0.02 && clamped < 0.98
+            if (shouldShow !== showScrollIndicator) {
+              setShowScrollIndicator(shouldShow)
+            }
+
+            prevProgressRef.current = clamped
+          })
+
+          const clampIndex = React.useCallback(
+            (value: number) => {
+              return Math.min(Math.max(value, 0), items.length - 1)
+            },
+            [items.length],
+          )
+
+          const scrollToProgress = React.useCallback(
+            (progress: number) => {
+              if (!containerRef.current) return
+              const container = containerRef.current
+              const rect = container.getBoundingClientRect()
+              const containerTop = window.scrollY + rect.top
+              const containerHeight = container.offsetHeight
+              const viewportHeight = window.innerHeight
+              const maxScrollable = Math.max(containerHeight - viewportHeight, 0)
+              const clampedProgress = Math.min(Math.max(progress, 0), 1)
+              const targetScrollY = containerTop + maxScrollable * clampedProgress
+
+              window.scrollTo({ top: targetScrollY, behavior: 'smooth' })
+            },
+            [],
+          )
+
+          const handleIndicatorClick = React.useCallback(() => {
+            if (items.length <= 1) return
+            const direction = scrollDirection
+            const nextIndex = clampIndex(
+              direction === 'down' ? activeIndex + 1 : activeIndex - 1,
+            )
+
+            if (nextIndex === activeIndex) {
+              const boundaryProgress = direction === 'down' ? 1 : 0
+              scrollToProgress(boundaryProgress)
+              return
+            }
+
+            const progressSpan = items.length > 1 ? 0.8 : 0
+            const targetProgress =
+              items.length > 1
+                ? (nextIndex / (items.length - 1)) * progressSpan
+                : 0
+
+            scrollToProgress(targetProgress)
+          }, [
+            items.length,
+            scrollDirection,
+            activeIndex,
+            clampIndex,
+            scrollToProgress,
+          ])
+
           return (
             <Box
               ref={containerRef}
@@ -170,12 +238,7 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                 alignItems="center"
               >
                 <Container maxW="container.xl">
-                  <Flex
-                    direction="row"
-                    minH="100vh"
-                    align="center"
-                    gap={20}
-                  >
+                  <Flex direction="row" minH="100vh" align="center" gap={20}>
                     {/* Left content */}
                     <Box
                       flex={1}
@@ -202,7 +265,8 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                         <MotionBox
                           key={item.id}
                           style={{
-                            position: activeIndex === index ? 'static' : 'absolute',
+                            position:
+                              activeIndex === index ? 'static' : 'absolute',
                             opacity: activeIndex === index ? 1 : 0,
                           }}
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -218,7 +282,7 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                         >
                           <Box>
                             <Heading
-                              fontSize="4xl"
+                              fontSize={['lg', '4xl']}
                               fontWeight="extrabold"
                               mb={6}
                               color={useColorModeValue('gray.900', 'white')}
@@ -227,7 +291,7 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                               {item.title}
                             </Heading>
                             <Text
-                              fontSize="lg"
+                              fontSize={['lg', 'xl']}
                               color={useColorModeValue('gray.500', 'gray.400')}
                               lineHeight="relaxed"
                               maxW="lg"
@@ -277,7 +341,10 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                               borderRadius="2xl"
                               shadow="2xl"
                               border="1px"
-                              borderColor={useColorModeValue('gray.200', 'gray.700')}
+                              borderColor={useColorModeValue(
+                                'gray.200',
+                                'gray.700',
+                              )}
                             />
                           </MotionBox>
                         ))}
@@ -310,6 +377,55 @@ const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
                     </Box>
                   </Flex>
                 </Container>
+                <Box
+                  position="absolute"
+                  bottom={8}
+                  left="50%"
+                  transform="translateX(-50%)"
+                  zIndex={1}
+                >
+                  <AnimatePresence>
+                    {showScrollIndicator && (
+                      <MotionBox
+                        key="scroll-indicator"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 20, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: 'easeOut' }}
+                      >
+                        <MotionBox
+                          animate={{ y: [0, 10, 0], opacity: [0.6, 1, 0.6] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: 'loop',
+                            ease: 'easeInOut',
+                          }}
+                          whileHover={{ scale: 1.05, opacity: 1 }}
+                        >
+                          <IconButton
+                            aria-label="Scroll down"
+                            variant="outline"
+                            colorScheme="primary"
+                            size="lg"
+                            borderRadius="full"
+                            boxShadow="lg"
+                            onClick={handleIndicatorClick}
+                            icon={
+                              <MotionSpan
+                                animate={{ rotate: scrollDirection === 'down' ? 0 : 180 }}
+                                transition={{ duration: 0.3, ease: 'easeOut' }}
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                              >
+                                <RiArrowDownDoubleFill size={24} />
+                              </MotionSpan>
+                            }
+                          />
+                        </MotionBox>
+                      </MotionBox>
+                    )}
+                  </AnimatePresence>
+                </Box>
               </Box>
             </Box>
           )

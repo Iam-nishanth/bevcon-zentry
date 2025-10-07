@@ -52,9 +52,9 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
     <Card variant="outline" maxW="full" overflow="hidden">
       {imageSrc ? (
-        <Image src={imageSrc} alt={imageAlt} objectFit="cover" w="full" h="180px" _hover={{ transform: 'scale(1.1)' }} transition="transform 0.3s ease" />
+        <Image src={imageSrc} alt={imageAlt} objectFit="cover" w="full" h="250px" _hover={{ transform: 'scale(1.1)' }} transition="transform 0.3s ease" />
       ) : (
-        <Box bg="gray.100" _dark={{ bg: 'gray.700' }} w="full" h="180px" display="flex" alignItems="center" justifyContent="center">
+        <Box bg="gray.100" _dark={{ bg: 'gray.700' }} w="full" h="250px" display="flex" alignItems="center" justifyContent="center">
           <Text color="muted">{title}</Text>
         </Box>
       )}
@@ -62,9 +62,9 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
         <Heading size="md">{title}</Heading>
         <Text color="muted">{description}</Text>
       </CardBody>
-      <CardFooter gap="2">
-        <Button as="a" href={learnMoreHref} variant="outline">Learn More</Button>
-        <Button as="a" href={enquireHref} colorScheme="primary">Enquire</Button>
+      <CardFooter gap="2" display="flex" justifyContent="center">
+        <Button as="a" href={learnMoreHref} variant="outline" size={["sm", "md"]}>Learn More</Button>
+        <Button as="a" href={enquireHref} colorScheme="primary" size={["sm", "md"]}>Enquire</Button>
       </CardFooter>
     </Card>
   )
