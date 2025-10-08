@@ -13,6 +13,7 @@ const LogoSlider: React.FC = () => {
   const mylanHoverFilter = useColorModeValue('none', 'invert(1)')
   const alplaFilter = useColorModeValue('grayscale(100%)', 'grayscale(100%) invert(1)')
   const drreddyFilter = useColorModeValue('grayscale(100%)', 'grayscale(100%) invert(1)')
+  const relianceFilter = useColorModeValue('grayscale(100%)', 'grayscale(100%) invert(1)')
 
   const clientLogos = [
     { src: '/home/bevcon-clients/Granules.png', alt: 'Granules' },
@@ -36,7 +37,7 @@ const LogoSlider: React.FC = () => {
       maxH: { base: '26px', md: '40px' },
     },
     { src: '/home/bevcon-clients/perfetti.png', alt: 'Perfetti Van Melle' },
-    { src: '/home/bevcon-clients/reliance.png', alt: 'Reliance Industries' },
+    { src: '/home/bevcon-clients/Reliance_Industries.png', alt: 'Reliance Industries' },
     { src: '/home/bevcon-clients/saint-gobian.png', alt: 'Saint-Gobain' },
   ]
 
@@ -74,27 +75,25 @@ const LogoSlider: React.FC = () => {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  maxH={logo.maxH ?? { base: '40px', md: '60px' }}
+                  maxH={logo.maxH ?? { base: '50px', md: '60px' }}
                   maxW={logo.maxW}
                   objectFit="contain"
                   filter={
                     logo.alt === 'Colgate'
                       ? colgateFilter
-                      : logo.alt === 'Mylan'
-                        ? mylanFilter
                         : logo.alt === 'ALPLA'
                           ? alplaFilter
                           : logo.alt === 'Dr. Reddy'
                             ? drreddyFilter
-                            : 'grayscale(100%)'
+                            : logo.alt === 'Reliance'
+                              ? relianceFilter
+                              : ''
                   }
                   _hover={{
                     filter:
                       logo.alt === 'Colgate'
                         ? colgateHoverFilter
-                        : logo.alt === 'Mylan'
-                          ? mylanHoverFilter
-                            : 'none',
+                        : "none"
                   }}
                   w="auto"
                   transition="all 0.3s"

@@ -33,13 +33,13 @@ export interface StickyScrollSectionProps {
 }
 
 const defaultItems: StickyScrollItem[] = [
-  {
-    id: 1,
-    title: 'Industry Certifications',
-    description:
-      'Our products meet the highest industry standards with comprehensive certifications including CE marking, ISO compliance, and fire safety ratings. We ensure full regulatory compliance across all manufacturing, warehousing, and logistics applications to keep your operations safe and legally compliant.',
-    imageSrc: '/home/why-choose/certified(1).png',
-  },
+  // {
+  //   id: 1,
+  //   title: 'Industry Certifications',
+  //   description:
+  //     'Our products meet the highest industry standards with comprehensive certifications including CE marking, ISO compliance, and fire safety ratings. We ensure full regulatory compliance across all manufacturing, warehousing, and logistics applications to keep your operations safe and legally compliant.',
+  //   imageSrc: '/home/why-choose/certified(1).png',
+  // },
   {
     id: 2,
     title: 'Expert Installation',
