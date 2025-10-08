@@ -75,8 +75,44 @@ const ContactPage: NextPage = () => {
 
   return (
     <>
-      <title>Contact Us - Bevcon Zentry</title>
-      <meta name="description" content="Have questions about our products or ready to get in touch? Send us a message and we'll respond as soon as possible." />
+      <title>Contact Us - Request Quote for High Speed Doors & Dock Levellers | Bevcon Zentry</title>
+      <meta name="description" content="Get in touch with Bevcon Zentry for high speed doors, dock levellers, and industrial door solutions. Request a quote, technical support, or product information. Located in Hyderabad, serving all of India." />
+      <meta name="keywords" content="contact bevcon zentry, request quote high speed doors, dock leveller price, industrial doors hyderabad, warehouse equipment supplier india" />
+      <link rel="canonical" href="https://bevconzentry.in/contact/" />
+      
+      {/* Local Business Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Bevcon Zentry",
+          "description": "Industrial doors and loading bay solutions supplier",
+          "url": "https://bevconzentry.in",
+          "telephone": "",
+          "email": "mktg_support@bevconzentry.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. E8/C8 - 2A, (24-60/10/11), IDA, UPPAL",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500039",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.4065",
+            "longitude": "78.5672"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "priceRange": "$$"
+        })}
+      </script>
+      
       <Box position="relative" overflow="hidden" minH="100vh" bg={useColorModeValue('gray.50', 'gray.900')}>
       <BackgroundGradient height="100%" zIndex="-1" />
       

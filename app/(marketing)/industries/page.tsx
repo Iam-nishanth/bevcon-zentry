@@ -26,11 +26,33 @@ export default function IndustriesPage() {
 
   return (
     <>
-      <title>Industries - Bevcon Zentry</title>
+      <title>Industries We Serve - High Speed Doors & Loading Bay Solutions | Bevcon Zentry</title>
       <meta
         name="description"
-        content="Discover our specialized industrial doors and loading bay solutions for diverse industries"
+        content="Specialized industrial doors, high speed doors, and loading bay solutions for manufacturing, warehousing, logistics, cold storage, pharmaceutical, and food processing industries across India."
       />
+      <meta name="keywords" content="industrial doors for warehouses, high speed doors manufacturing, cold storage doors, pharmaceutical facility doors, food processing doors, logistics warehouse solutions" />
+      <link rel="canonical" href="https://bevconzentry.in/industries/" />
+      
+      {/* Service Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Industrial Door Solutions",
+          "provider": {
+            "@type": "Organization",
+            "name": "Bevcon Zentry",
+            "url": "https://bevconzentry.in"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "description": "Specialized industrial doors and loading bay solutions for diverse industries including manufacturing, warehousing, logistics, cold storage, and pharmaceuticals"
+        })}
+      </script>
+      
       <Box>
         {/* Hero Section */}
         <Box position="relative" overflow="hidden">

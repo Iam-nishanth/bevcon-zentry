@@ -72,8 +72,49 @@ import testimonials from '#data/testimonials'
 const Home: NextPage = () => {
   return (
     <>
-      <title>Bevcon Zentry</title>
-      <meta name="description" content="Industrial Doors and Loading Bay Solutions" />
+      <title>High Speed Doors & Dock Levellers | Bevcon Zentry - Industrial Door Solutions</title>
+      <meta name="description" content="Leading supplier of high speed doors, dock levellers, dock shelters, and fire-rated shutters for industrial facilities. Expert installation and 24/7 support. Request a quote today!" />
+      <meta name="keywords" content="high speed doors, dock levellers, industrial doors, loading bay solutions, rapid doors, warehouse doors, dock shelters, bevcon zentry" />
+      <link rel="canonical" href="https://bevconzentry.in/" />
+      
+      {/* Product Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "High Speed Doors",
+          "description": "Rapid opening doors for high-traffic areas with advanced safety features",
+          "brand": {
+            "@type": "Brand",
+            "name": "Bevcon Zentry"
+          },
+          "category": "Industrial Doors",
+          "offers": {
+            "@type": "AggregateOffer",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "INR"
+          }
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Dock Levellers",
+          "description": "Hydraulic and mechanical levelers for seamless loading operations",
+          "brand": {
+            "@type": "Brand",
+            "name": "Bevcon Zentry"
+          },
+          "category": "Loading Bay Equipment",
+          "offers": {
+            "@type": "AggregateOffer",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "INR"
+          }
+        })}
+      </script>
+      
       <Box>
       <HeroSection />
       <ProductsSection />

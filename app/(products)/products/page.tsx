@@ -117,11 +117,54 @@ const ProductsPage: NextPage = () => {
 
   return (
     <>
-      <title>Products - Bevcon Zentry</title>
+      <title>Industrial Products - High Speed Doors, Dock Levellers & More | Bevcon Zentry</title>
       <meta
         name="description"
-        content="Discover our complete range of products for industrial solutions"
+        content="Browse our complete range of high speed doors, dock levellers, dock shelters, truck restraints, and fire-rated shutters. Premium industrial doors and loading bay equipment from top manufacturers like Nergeco and SKB."
       />
+      <meta name="keywords" content="high speed doors, dock levellers, dock shelters, truck restraints, fire rated shutters, industrial doors, loading bay equipment, Nergeco doors, SKB doors, warehouse equipment" />
+      <link rel="canonical" href="https://bevconzentry.in/products/" />
+      
+      {/* Product Catalog Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Industrial Products Catalog",
+          "description": "Complete range of high speed doors, dock levellers, and loading bay solutions",
+          "url": "https://bevconzentry.in/products/",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "position": 1,
+                "name": "High Speed Doors",
+                "description": "Rapid opening doors for high-traffic areas"
+              },
+              {
+                "@type": "Product",
+                "position": 2,
+                "name": "Dock Levellers",
+                "description": "Hydraulic and mechanical levelers for loading operations"
+              },
+              {
+                "@type": "Product",
+                "position": 3,
+                "name": "Dock Shelters",
+                "description": "Weather sealing solutions for efficient temperature control"
+              },
+              {
+                "@type": "Product",
+                "position": 4,
+                "name": "Fire Rated Shutters",
+                "description": "Certified fire protection doors"
+              }
+            ]
+          }
+        })}
+      </script>
+      
       <Box bg={bgColor} minH="100vh">
         {/* Hero Section */}
         <Box
