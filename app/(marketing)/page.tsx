@@ -206,6 +206,7 @@ const HeroSection: React.FC = () => {
                   '/home/Industrial Bay Doors.png', 
                   '/home/Roller Shutters.png',
                   ]}
+                alt="Industrial warehouse and loading bay equipment showcase"
                 intervalMs={4000}
               />
             </Box>

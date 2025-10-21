@@ -63,8 +63,8 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
         <Text color="muted">{description}</Text>
       </CardBody>
       <CardFooter gap="2" display="flex" justifyContent="center">
-        <Button as="a" href={learnMoreHref} variant="outline" size={["sm", "md"]}>Learn More</Button>
-        <Button as="a" href={enquireHref} colorScheme="primary" size={["sm", "md"]}>Enquire</Button>
+        <Button as="a" href={learnMoreHref} variant="outline" size={["sm", "md"]} aria-label={`Learn more about ${typeof title === 'string' ? title : 'this product'}`}>Learn More</Button>
+        <Button as="a" href={enquireHref} colorScheme="primary" size={["sm", "md"]} aria-label={`Enquire about ${typeof title === 'string' ? title : 'this product'}`}>Enquire</Button>
       </CardFooter>
     </Card>
   )

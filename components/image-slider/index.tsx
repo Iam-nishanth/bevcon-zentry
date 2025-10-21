@@ -9,11 +9,13 @@ export const ImagesSlider = ({
   autoplay = true,
   direction = 'up',
   intervalMs = 5000,
+  alt = 'Image slider',
 }: {
   images: string[]
   autoplay?: boolean
   direction?: 'up' | 'down'
   intervalMs?: number
+  alt?: string
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loading, setLoading] = useState(false)
@@ -115,6 +117,7 @@ export const ImagesSlider = ({
           <motion.img
             key={currentIndex}
             src={loadedImages[currentIndex]}
+            alt={`${alt} - Image ${currentIndex + 1} of ${images.length}`}
             initial="initial"
             animate="visible"
             exit="exit"
