@@ -8,6 +8,12 @@ export default function Layout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }}>
       <head>
+        {/* Performance optimizations */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
         {/* Favicons */}
         <link
           rel="apple-touch-icon"
