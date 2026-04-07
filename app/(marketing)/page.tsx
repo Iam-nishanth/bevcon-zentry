@@ -280,7 +280,7 @@ const ProductsSection = () => {
             description:
               'Rapid opening doors for high-traffic areas with advanced safety features',
             imageSrc: '/home/product-range/High-Speed.png',
-            learnMoreHref: '/products',
+            learnMoreHref: '/products?category=High+Speed+Doors',
             enquireHref: '/contact',
             delay: 0.2,
           },
@@ -289,7 +289,7 @@ const ProductsSection = () => {
             description:
               'Hydraulic and mechanical levelers for seamless loading operations',
             imageSrc: '/home/product-range/DockLeveller.png',
-            learnMoreHref: '/products',
+            learnMoreHref: '/products?category=Dock+Levelers',
             enquireHref: '/contact',
             delay: 0.3,
           },
@@ -307,7 +307,7 @@ const ProductsSection = () => {
             description:
               'Weather sealing solutions for efficient temperature control',
             imageSrc: '/home/product-range/dock-shelters.png',
-            learnMoreHref: '/products',
+            learnMoreHref: '/products?category=Dock+Levelers',
             enquireHref: '/contact',
             delay: 0.5,
           },
@@ -316,7 +316,7 @@ const ProductsSection = () => {
             description:
               'Certified fire protection doors for enhanced safety compliance',
             imageSrc: '/home/product-range/Fire-shutter.png',
-            learnMoreHref: '/products',
+            learnMoreHref: '/products?category=Fire+Rated+Shutters',
             enquireHref: '/contact',
             delay: 0.6,
           },
