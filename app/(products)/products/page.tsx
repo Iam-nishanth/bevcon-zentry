@@ -26,7 +26,8 @@ import {
 import { NextPage } from 'next'
 import { FiSearch } from 'react-icons/fi'
 
-import React, { useMemo, useState } from 'react'
+import React, { Suspense, useMemo, useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 import { FallInPlace } from '#components/motion/fall-in-place'
 import { ProductCard } from '#components/product-card'
@@ -41,11 +42,23 @@ import {
 const brands = getAllBrands()
 const productCategories = getAllCategories()
 
-const ProductsPage: NextPage = () => {
+const ProductsContent: React.FC = () => {
+  const searchParams = useSearchParams()
+
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
+    const category = searchParams.get('category')
+    return category ? [category] : []
+  })
   const [selectedBrands, setSelectedBrands] = useState<string[]>([])
   const [sortBy, setSortBy] = useState('best-seller')
+
+  useEffect(() => {
+    const category = searchParams.get('category')
+    if (category) {
+      setSelectedCategories([category])
+    }
+  }, [searchParams])
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -411,6 +424,14 @@ const ProductsPage: NextPage = () => {
         />
       </Box>
     </>
+  )
+}
+
+const ProductsPage: NextPage = () => {
+  return (
+    <Suspense>
+      <ProductsContent />
+    </Suspense>
   )
 }
 
