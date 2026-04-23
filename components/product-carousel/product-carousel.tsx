@@ -1,122 +1,78 @@
 'use client'
 
-import React from 'react'
-import {
-  Box,
-  IconButton,
-  useBreakpointValue,
-  Image,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-import Slider from 'react-slick'
+import React, { useCallback, useEffect, useState } from 'react'
+
+import s from './ProductCarousel.module.css'
 
 interface ProductCarouselProps {
   images: string[]
   alt: string
-  height?: string | { base?: string; md?: string; lg?: string }
+  height?: string
 }
 
-const settings = {
-  dots: true,
-  arrows: false,
-  fade: true,
-  infinite: true,
-  autoplay: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-}
+const ChevronLeft = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 18l-6-6 6-6" />
+  </svg>
+)
 
-export const ProductCarousel: React.FC<ProductCarouselProps> = ({ images, alt, height = '200px' }) => {
-  const [slider, setSlider] = React.useState<Slider | null>(null)
-  
-  const top = useBreakpointValue({ base: '50%', md: '50%' })
-  const side = useBreakpointValue({ base: '10px', md: '10px' })
-  const arrowBg = useColorModeValue('whiteAlpha.900', 'blackAlpha.700')
-  const arrowHoverBg = useColorModeValue('white', 'blackAlpha.600')
-  const arrowColor = useColorModeValue('gray.700', 'gray.100')
+const ChevronRight = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 18l6-6-6-6" />
+  </svg>
+)
 
-  if (images.length <= 1) {
+export const ProductCarousel: React.FC<ProductCarouselProps> = ({
+  images,
+  alt,
+  height = '420px',
+}) => {
+  const [current, setCurrent] = useState(0)
+
+  const prev = useCallback(() => setCurrent((i) => (i - 1 + images.length) % images.length), [images.length])
+  const next = useCallback(() => setCurrent((i) => (i + 1) % images.length), [images.length])
+
+  useEffect(() => {
+    if (images.length <= 1) return
+    const id = setInterval(next, 4000)
+    return () => clearInterval(id)
+  }, [next, images.length])
+
+  if (images.length === 0) return null
+
+  if (images.length === 1) {
     return (
-      <Image
-        src={images[0]}
-        alt={alt}
-        w="full"
-        h={height}
-        objectFit="cover"
-        _hover={{ transform: 'scale(1.05)' }}
-        transition="transform 0.3s ease"
-      />
+      <div className={s.wrap} style={{ height }}>
+        <img src={images[0]} alt={alt} className={s.img} />
+      </div>
     )
   }
 
   return (
-    <Box position="relative" height={height} width="full" overflow="hidden">
-      {/* CSS files for react-slick */}
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-      />
-      
-      {/* Left Arrow */}
-      <IconButton
-        aria-label="previous-image"
-        variant="ghost"
-        position="absolute"
-        left={side}
-        top={top}
-        transform="translate(0%, -50%)"
-        zIndex={2}
-        size="sm"
-        bg={arrowBg}
-        color={arrowColor}
-        _hover={{ bg: arrowHoverBg }}
-        onClick={() => slider?.slickPrev()}
-      >
-        <BiLeftArrowAlt size="20px" />
-      </IconButton>
-      
-      {/* Right Arrow */}
-      <IconButton
-        aria-label="next-image"
-        variant="ghost"
-        position="absolute"
-        right={side}
-        top={top}
-        transform="translate(0%, -50%)"
-        zIndex={2}
-        size="sm"
-        bg={arrowBg}
-        color={arrowColor}
-        _hover={{ bg: arrowHoverBg }}
-        onClick={() => slider?.slickNext()}
-      >
-        <BiRightArrowAlt size="20px" />
-      </IconButton>
-      
-      {/* Slider */}
-      <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {images.map((image, index) => (
-          <Box key={index} height={height} position="relative">
-            <Image
-              src={image}
-              alt={`${alt} - Image ${index + 1}`}
-              w="full"
-              h={height}
-              objectFit="cover"
-              _hover={{ transform: 'scale(1.05)' }}
-              transition="transform 0.3s ease"
-            />
-          </Box>
+    <div className={s.wrap} style={{ height }}>
+      {images.map((src, i) => (
+        <div key={src} className={`${s.slide} ${i === current ? s.slideActive : ''}`}>
+          <img src={src} alt={`${alt} — ${i + 1}`} className={s.img} loading="lazy" />
+        </div>
+      ))}
+
+      <button className={`${s.arrow} ${s.arrowPrev}`} onClick={prev} aria-label="Previous image">
+        <ChevronLeft />
+      </button>
+      <button className={`${s.arrow} ${s.arrowNext}`} onClick={next} aria-label="Next image">
+        <ChevronRight />
+      </button>
+
+      <div className={s.dots}>
+        {images.map((_, i) => (
+          <button
+            key={i}
+            className={`${s.dot} ${i === current ? s.dotActive : ''}`}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to image ${i + 1}`}
+          />
         ))}
-      </Slider>
-    </Box>
+      </div>
+    </div>
   )
 }

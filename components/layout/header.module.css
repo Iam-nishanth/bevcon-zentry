@@ -1,0 +1,221 @@
+/* ── Header shell ─────────────────────────────────────────── */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+.headerSticky {
+  position: sticky;
+  top: 0;
+}
+
+.headerScrolled {
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+:global(.chakra-ui-dark) .headerScrolled {
+  background-color: rgba(26, 32, 44, 0.88);
+}
+
+.inner {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 20px 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .inner {
+    padding: 14px 28px;
+  }
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  padding: 2px;
+}
+
+.logoSvg {
+  display: block;
+  width: 132px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .logoSvg {
+    width: 168px;
+  }
+}
+
+/* ── Nav area (right side) ────────────────────────────────── */
+.navArea {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.desktopLinks {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin-right: 4px;
+}
+
+@media (min-width: 992px) {
+  .desktopLinks {
+    display: flex;
+  }
+}
+
+/* ── Desktop nav link ─────────────────────────────────────── */
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  color: #3182ce;
+}
+
+.navLinkPrimary {
+  background-color: #3182ce;
+  color: #fff !important;
+  padding: 6px 18px;
+  border-radius: 6px;
+}
+
+.navLinkPrimary:hover {
+  background-color: #2b6cb0;
+  color: #fff !important;
+}
+
+/* ── Icon buttons (theme toggle / hamburger) ──────────────── */
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.iconBtn:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+:global(.chakra-ui-dark) .iconBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.menuBtn {
+  /* shown on mobile only */
+}
+
+@media (min-width: 992px) {
+  .menuBtn {
+    display: none;
+  }
+}
+
+/* ── Mobile overlay ───────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow-y: auto;
+}
+
+:global(.chakra-ui-dark) .overlay {
+  background-color: rgba(17, 24, 39, 0.96);
+}
+
+.overlayTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+:global(.chakra-ui-dark) .overlayTop {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: color 0.15s ease;
+}
+
+:global(.chakra-ui-dark) .mobileLink {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.mobileLink:hover {
+  color: #3182ce;
+}
+
+.mobileLinkActive {
+  color: #3182ce;
+  font-weight: 600;
+}
+
+/* ── Accessibility ────────────────────────────────────────── */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

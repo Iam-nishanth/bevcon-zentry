@@ -46,8 +46,8 @@ const siteConfig = {
       items: [
         {
           label: 'Email',
-          value: 'corporate@bevconzentry.com',
-          href: 'mailto:corporate@bevconzentry.com',
+          value: 'mktg_support@bevconzentry.com',
+          href: 'mailto:mktg_support@bevconzentry.com',
         },
       ],
     },

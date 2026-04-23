@@ -44,6 +44,7 @@ export interface Product {
   brand?: string
   heading?: string
   description?: any;
+  interior?: boolean;
 }
 
 export interface BrandData {
@@ -60,7 +61,7 @@ export const nergecoData: BrandData = {
   products: [
     {
       id: "nergeco-001",
-      title: "Interior High-Speed Flexible Door - Standard Logistics",
+      title: "Standard Logistics - R FORUM 5",
       model: "SL-2000",
       sku: "NER-SL2000",
       category: "High Speed Doors",
@@ -95,6 +96,7 @@ The door's construction utilizes advanced multi-composite materials engineered t
         "Manufacturing facilities",
         "Distribution centers"
       ],
+      interior: true,
       tags: ["Energy Efficient", "Self-Repairing", "High Traffic"],
       image: [
         "/products/nergeco/SL/High-speed flexible doors with multi-composite structure for standard logistics (SL) .jpg",
@@ -105,7 +107,7 @@ The door's construction utilizes advanced multi-composite materials engineered t
     },
     {
       id: "nergeco-002",
-      title: "High-Speed Door for Food Processing",
+      title: "Food Processing - R FOOD 5",
       model: "FP-2500",
       sku: "NER-FP2500",
       category: "High Speed Doors",
@@ -140,6 +142,7 @@ Operating at double the speed of traditional industrial doors, the system minimi
         "Cold storage facilities",
         "Pharmaceutical manufacturing"
       ],
+      interior: true,
       tags: ["Food Safe", "Corrosion Resistant", "HACCP Compliant"],
       image: [
         "/products/nergeco/Food Processing Industry/High-speed_flexible_door_with_frame_which_is_more_corrosion-resistant_than_stainless_steel.jpg",
@@ -149,7 +152,7 @@ Operating at double the speed of traditional industrial doors, the system minimi
     },
     {
       id: "nergeco-003",
-      title: "Cleanroom High-Speed Door",
+      title: "Cleanroom High-Speed Door - R LABO 5",
       model: "CR-1800",
       sku: "NER-CR1800",
       category: "High Speed Doors",
@@ -184,11 +187,12 @@ The flexible safety edge responds to contact across a 15-inch detection zone wit
         "Electronics manufacturing",
         "Medical device production"
       ],
+      interior: true,
       tags: ["Cleanroom Certified", "High Pressure", "Contamination Control"],
       image: [
         "/products/nergeco/Doors for Clean Processes/Sealed_and_washable_high-speed_flexible_doors_for_clean_environments.jpg",
         "/products/nergeco/Doors for Clean Processes/Flexible,_high-speed_curtain_easily_installed_in_clean_rooms.jpg",
-        "/products/nergeco/Doors for Clean Processes/The_slides_are_smooth_and_fully_accessible_for_cleaning_with_no_dismantling_necessary.jpg"
+        // "/products/nergeco/Doors for Clean Processes/The_slides_are_smooth_and_fully_accessible_for_cleaning_with_no_dismantling_necessary.jpg"
       ]
     },
     {
@@ -221,6 +225,7 @@ The flexible safety edge responds to contact across a 15-inch detection zone wit
         "Freezer rooms",
         "Refrigerated facilities"
       ],
+      interior: true,
       tags: ["Insulated", "Energy Saving", "Cold Storage"],
       image: [
         "/products/nergeco/Cold Chain/High-speed isothermal doors for cold rooms.jpg",
@@ -273,6 +278,7 @@ All versions maintain EN 12453 compliance for safety and emergency applications.
         "Fire escape routes",
         "Safety corridors"
       ],
+      interior: true,
       tags: ["Emergency Certified", "Power-Out Opening", "Safety Compliant"],
       image: [
         "/products/nergeco/Power Out Opening/High-speed Emergency Exit door for public access buildings.jpg",
@@ -281,7 +287,7 @@ All versions maintain EN 12453 compliance for safety and emergency applications.
     },
     {
       id: "nergeco-006",
-      title: "External flexible folding doors T-series",
+      title: "External flexible folding doors - ENDURO 5",
       model: "T-Series",
       sku: "NER-TSERIES",
       category: "High Speed Doors",
@@ -329,6 +335,7 @@ Customization options include: variable curtain transparency, adjustable insulat
         "Cold logistics",
         "Recycling sites"
       ],
+      interior: false,
       tags: ["Weather Resistant", "High Wind", "External Use", "Windproof", "Insulated", "Acoustic", "Panoramic View"],
       image: [
         "/products/nergeco/T-Series/Large-dimension-NERGECO-T-ENDURO-5-exterior-high-speed-flexible-door.jpg",

@@ -1,68 +1,108 @@
-"use client";
+'use client'
 
-import { HStack } from '@chakra-ui/react'
-import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
-import { useScrollSpy } from 'hooks/use-scrollspy'
-import { usePathname, useRouter } from 'next/navigation'
-
-import * as React from 'react'
-
-import { MobileNavButton } from '#components/mobile-nav'
-import { MobileNavContent } from '#components/mobile-nav'
-import { NavLink } from '#components/nav-link'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useColorMode } from '@chakra-ui/react'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { FiMoon, FiSun, FiX } from 'react-icons/fi'
+import useRouteChanged from 'hooks/use-route-changed'
 import siteConfig from '#data/config'
-
-import ThemeToggle from './theme-toggle'
+import { Logo } from './logo'
+import styles from './header.module.css'
 
 const Navigation: React.FC = () => {
-  const mobileNav = useDisclosure()
-  const router = useRouter()
-  const path = usePathname()
-  const activeId = useScrollSpy(
-    siteConfig.header.links
-      .filter(({ id }) => id)
-      .map(({ id }) => `[id="${id}"]`),
-    {
-      threshold: 0.75,
-    },
-  )
+  const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const { colorMode, toggleColorMode } = useColorMode()
 
-  const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
+  useRouteChanged(() => setMenuOpen(false))
 
-  useUpdateEffect(() => {
-    mobileNavBtnRef.current?.focus()
-  }, [mobileNav.isOpen])
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 992px)')
+    const handler = (e: MediaQueryListEvent) => {
+      if (e.matches) setMenuOpen(false)
+    }
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   return (
-    <HStack spacing="2" flexShrink={0}>
-      {siteConfig.header.links.map(({ href, id, ...props }, i) => {
-        return (
-          <NavLink
-            display={['none', null, 'block']}
-            fontWeight="semibold"
-            fontSize={"md"}
-            href={href || `/${id}`}
-            key={i}
-            _hover={{
-              color: "primary.500",
-            }}
-            {...props}
-          >
-            {props.label}
-          </NavLink>
-        )
-      })}
+    <>
+      <nav className={styles.navArea}>
+        <div className={styles.desktopLinks}>
+          {siteConfig.header.links.map(({ href, id, label, variant }, i) => {
+            const url = href || `/${id}`
+            const isPrimary = variant === 'primary'
+            return (
+              <Link
+                key={i}
+                href={url}
+                className={[
+                  styles.navLink,
+                  isPrimary ? styles.navLinkPrimary : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+              >
+                {label}
+              </Link>
+            )
+          })}
+        </div>
 
-      <ThemeToggle />
+        <button
+          className={styles.iconBtn}
+          onClick={toggleColorMode}
+          aria-label="Toggle color mode"
+        >
+          {colorMode === 'light' ? <FiMoon size={15} /> : <FiSun size={15} />}
+        </button>
 
-      <MobileNavButton
-        ref={mobileNavBtnRef}
-        aria-label="Open Menu"
-        onClick={mobileNav.onOpen}
-      />
+        <button
+          className={[styles.iconBtn, styles.menuBtn].join(' ')}
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
+        >
+          <AiOutlineMenu size={20} />
+        </button>
+      </nav>
 
-      <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
-    </HStack>
+      {menuOpen && (
+        <div className={styles.overlay} role="dialog" aria-modal="true">
+          <div className={styles.overlayTop}>
+            <Logo />
+            <button
+              className={styles.iconBtn}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <FiX size={20} />
+            </button>
+          </div>
+
+          {siteConfig.header.links.map(({ href, id, label }, i) => {
+            const url = href || `/${id}`
+            const isActive = !!pathname?.includes(id || '')
+            return (
+              <Link
+                key={i}
+                href={url}
+                className={[
+                  styles.mobileLink,
+                  isActive ? styles.mobileLinkActive : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            )
+          })}
+        </div>
+      )}
+    </>
   )
 }
 

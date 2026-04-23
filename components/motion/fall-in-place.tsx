@@ -1,4 +1,5 @@
-"use client"
+'use client'
+
 import React from 'react'
 
 import { MotionBox, MotionBoxProps } from './box'
@@ -9,12 +10,12 @@ export const FallInPlace: React.FC<MotionBoxProps & { delay?: number }> = (
   const { children, delay = 0.2, ...rest } = props
   return (
     <MotionBox
-      initial={{ scale: 1, opacity: 0, translateY: '20px' }}
+      initial={{ scale: 1, opacity: 0, translateY: '14px' }}
       animate={{ scale: 1, opacity: 1, translateY: 0 }}
       transition={{
         type: 'tween',
-        ease: 'easeInOut',
-        duration: 1,
+        ease: 'easeOut',
+        duration: 0.45,
         delay,
       }}
       {...rest}

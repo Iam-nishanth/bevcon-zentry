@@ -1,5 +1,3 @@
-import { MarketingLayout } from '#components/layout'
-
-export default function Layout(props: { children: React.ReactNode }) {
-  return <MarketingLayout>{props.children}</MarketingLayout>
+export default function MarketingLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
 }

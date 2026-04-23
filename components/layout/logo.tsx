@@ -1,9 +1,7 @@
-import { Box, Flex, Heading, VisuallyHidden } from '@chakra-ui/react'
-import { Link } from '@saas-ui/react'
-
-import * as React from 'react'
-
-import siteConfig from '#data/config'
+import React from 'react'
+import Link from 'next/link'
+import BevconZentry from '#data/Bevcon-Cropped new.svg'
+import styles from './header.module.css'
 
 export interface LogoProps {
   href?: string
@@ -11,34 +9,10 @@ export interface LogoProps {
 }
 
 export const Logo = ({ href = '/', onClick }: LogoProps) => {
-  let logo
-  if (siteConfig.logo) {
-    logo = (
-      <Box
-        as={siteConfig.logo}
-        mt="-2px"
-      />
-    )
-  } else {
-    logo = (
-      <Heading as="h1" size="md">
-        {siteConfig.seo?.title}
-      </Heading>
-    )
-  }
-
   return (
-    <Flex flexShrink="0" alignItems="flex-start">
-      <Link
-        href={href}
-        display="flex"
-        p="1"
-        borderRadius="sm"
-        onClick={onClick}
-      >
-        {logo}
-        <VisuallyHidden>{siteConfig.seo?.title}</VisuallyHidden>
-      </Link>
-    </Flex>
+    <Link href={href} className={styles.logoLink} onClick={onClick}>
+      <BevconZentry className={styles.logoSvg} />
+      <span className={styles.srOnly}>Bevcon Zentry</span>
+    </Link>
   )
 }

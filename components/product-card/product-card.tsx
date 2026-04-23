@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import {
   Box,
   Button,
@@ -11,6 +10,9 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
+
+import React from 'react'
+
 import { ProductCarousel } from '#components/product-carousel'
 import { Product } from '#data/products'
 
@@ -20,10 +22,10 @@ interface ProductCardProps {
   onShowDetails?: () => void
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ 
-  product, 
-  showDetails, 
-  onShowDetails 
+export const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  showDetails,
+  onShowDetails,
 }) => {
   const cardBg = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.600')
@@ -56,24 +58,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             Array.isArray(product.image) ? product.image : [product.image]
           }
           alt={product.title}
+          height="240px"
         />
       </Box>
 
       <CardBody p="4" flex="1" display="flex" flexDirection="column">
         <VStack align="flex-start" spacing="3" flex="1">
           {/* Title */}
-          <Heading
-            size="sm"
-            fontWeight="700"
-            color={titleColor}
-            noOfLines={2}
-          >
+          <Heading size="sm" fontWeight="700" color={titleColor} noOfLines={2}>
             {product.title}
           </Heading>
 
           {/* Features */}
           <Box w="full">
-            <Text fontSize="sm" fontWeight="800" mb="2" color={sectionHeadingColor}>
+            <Text
+              fontSize="sm"
+              fontWeight="800"
+              mb="2"
+              color={sectionHeadingColor}
+            >
               Key Features:
             </Text>
             <VStack align="flex-start" spacing="1">
@@ -97,7 +100,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Applications */}
           <Box w="full">
-            <Text fontSize="md" fontWeight="800" mb="2" color={sectionHeadingColor}>
+            <Text
+              fontSize="md"
+              fontWeight="800"
+              mb="2"
+              color={sectionHeadingColor}
+            >
               Applications:
             </Text>
             <Text fontSize="md" color={bodyColor}>
@@ -107,7 +115,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Action Button */}
           {showDetails && (
-            <Button colorScheme="primary" size="sm" w="full" mt="auto" onClick={onShowDetails}>
+            <Button
+              colorScheme="primary"
+              size="sm"
+              w="full"
+              mt="auto"
+              onClick={onShowDetails}
+            >
               Show Details
             </Button>
           )}
