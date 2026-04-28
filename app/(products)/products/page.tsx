@@ -73,9 +73,12 @@ const productSchema = {
   },
 }
 
-function getPrimaryImage(image: string | string[] | undefined): string {
+type ImageRef = string | { src: string; alt?: string }
+
+function getPrimaryImage(image: ImageRef | ImageRef[] | undefined): string {
   if (!image) return '/home/industrial-hall-1630742_1280.jpg'
-  return Array.isArray(image) ? image[0] : image
+  const first = Array.isArray(image) ? image[0] : image
+  return typeof first === 'string' ? first : first.src
 }
 
 const ArrowIcon = () => (

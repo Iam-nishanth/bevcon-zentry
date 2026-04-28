@@ -164,28 +164,28 @@ const products = [
     tag: 'Access Solutions',
     name: 'High Speed Doors',
     desc: 'Rapid-access doors for high-traffic industrial environments with integrated safety systems.',
-    img: '/home/product-range/High-Speed.png',
+    img: '/home/product-showcase/high-speed-doors.jpg',
     href: '/products?category=High+Speed+Doors',
   },
   {
     tag: 'Loading Bay',
     name: 'Dock Levelers',
     desc: 'Hydraulic and mechanical levelers ensuring seamless, safe loading operations.',
-    img: '/home/product-range/DockLeveller.png',
+    img: '/home/product-showcase/dock-levellers.jpg',
     href: '/products?category=Dock+Levelers',
   },
   {
     tag: 'Weather Sealing',
     name: 'Dock Shelters',
     desc: 'Weather-tight enclosures maintaining temperature integrity at every loading bay.',
-    img: '/home/product-range/dock-shelters.png',
+    img: '/home/product-showcase/dock-shelters.jpg',
     href: '/products?category=Dock+Levelers',
   },
   {
     tag: 'Fire Protection',
     name: 'Fire Rated Shutters',
     desc: 'Certified fire protection systems built to the highest compliance standards.',
-    img: '/home/product-range/Fire-shutter.png',
+    img: '/home/product-showcase/fire-rated-shutters.jpg',
     href: '/products?category=Fire+Rated+Shutters',
   },
 ]
@@ -609,7 +609,7 @@ export default function HomeNew() {
             <div className={s.ctaAddressBlock}>
               <span className={s.ctaAddressLabel}>Support</span>
               <span className={s.ctaAddressValue}>
-                Available 24 / 7 nationwide
+                Available pan India
               </span>
             </div>
           </div>

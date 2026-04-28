@@ -111,7 +111,7 @@ export default function HomeNav({
             onClick={() => setMobileOpen(false)}
           >
             <img
-              src="/static/main/bzpl-logo.svg"
+              src="/static/main/bzpl-icon.png"
               alt="Bevcon Zentry"
               className={s.navLogoImg}
             />

@@ -29,6 +29,8 @@ export interface ProductSpecifications {
   operating_cycles?: string
 }
 
+export type ProductImage = string | { src: string; alt?: string }
+
 export interface Product {
   id: string
   title: string
@@ -40,7 +42,7 @@ export interface Product {
   features: string[]
   applications: string[]
   tags: string[]
-  image: string | string[]
+  image: ProductImage | ProductImage[]
   brand?: string
   heading?: string
   description?: any;
@@ -228,9 +230,18 @@ The flexible safety edge responds to contact across a 15-inch detection zone wit
       interior: true,
       tags: ["Insulated", "Energy Saving", "Cold Storage"],
       image: [
-        "/products/nergeco/Cold Chain/High-speed isothermal doors for cold rooms.jpg",
-        "/products/nergeco/Cold Chain/Between Deep Freeze Areas/6 Nergeco high-speed doors with steel frame at the leading pork meat processors in the world.jpg",
-        "/products/nergeco/Cold Chain/Between Deep Freeze Areas/These multi-composite high-speed doors are fitted to the automatic conveyors of the largest cold store in Europe belonging to this food processing giant (BDFA) .jpg"
+        {
+          src: "/products/nergeco/Cold Chain/cold-room-isothermal.jpg",
+          alt: "High-speed isothermal doors for cold rooms",
+        },
+        {
+          src: "/products/nergeco/Cold Chain/between-deep-freeze/pork-processor-steel-frame.jpg",
+          alt: "6 Nergeco high-speed doors with steel frame at the leading pork meat processors in the world",
+        },
+        {
+          src: "/products/nergeco/Cold Chain/between-deep-freeze/bdfa-conveyor.jpg",
+          alt: "Multi-composite high-speed doors fitted to the automatic conveyors of the largest cold store in Europe (BDFA)",
+        },
       ]
     },
     {

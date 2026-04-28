@@ -8,7 +8,7 @@ export default function HomeFooter() {
       <div className={s.footerInner}>
         <Link href="/home" className={s.footerLogo}>
           <img
-            src="/static/main/bzpl-logo.svg"
+            src="/static/main/bzpl-icon.png"
             alt="Bevcon Zentry"
             className={s.footerLogoImg}
           />

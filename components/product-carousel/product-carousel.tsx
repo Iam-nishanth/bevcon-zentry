@@ -4,11 +4,16 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import s from './ProductCarousel.module.css'
 
+type CarouselImage = string | { src: string; alt?: string }
+
 interface ProductCarouselProps {
-  images: string[]
+  images: CarouselImage[]
   alt: string
   height?: string
 }
+
+const resolveImage = (img: CarouselImage, fallbackAlt: string) =>
+  typeof img === 'string' ? { src: img, alt: fallbackAlt } : { src: img.src, alt: img.alt ?? fallbackAlt }
 
 const ChevronLeft = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -41,20 +46,24 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
   if (images.length === 0) return null
 
   if (images.length === 1) {
+    const only = resolveImage(images[0], alt)
     return (
       <div className={s.wrap} style={{ height }}>
-        <img src={images[0]} alt={alt} className={s.img} />
+        <img src={only.src} alt={only.alt} className={s.img} />
       </div>
     )
   }
 
   return (
     <div className={s.wrap} style={{ height }}>
-      {images.map((src, i) => (
-        <div key={src} className={`${s.slide} ${i === current ? s.slideActive : ''}`}>
-          <img src={src} alt={`${alt} — ${i + 1}`} className={s.img} loading="lazy" />
-        </div>
-      ))}
+      {images.map((img, i) => {
+        const { src, alt: imgAlt } = resolveImage(img, `${alt} — ${i + 1}`)
+        return (
+          <div key={src} className={`${s.slide} ${i === current ? s.slideActive : ''}`}>
+            <img src={src} alt={imgAlt} className={s.img} loading="lazy" />
+          </div>
+        )
+      })}
 
       <button className={`${s.arrow} ${s.arrowPrev}`} onClick={prev} aria-label="Previous image">
         <ChevronLeft />
