@@ -1,6 +1,10 @@
 import { ColorModeScript, theme } from '@chakra-ui/react'
 
+import OverlayScrollbar from '#components/overlay-scrollbar/OverlayScrollbar'
+
 import { Provider } from './provider'
+
+import './globals.css'
 
 export default function Layout(props: { children: React.ReactNode }) {
   const colorMode = theme.config.initialColorMode
@@ -156,6 +160,7 @@ export default function Layout(props: { children: React.ReactNode }) {
       <body className={`chakra-ui-${colorMode}`}>
         <ColorModeScript initialColorMode={colorMode} />
         <Provider>{props.children}</Provider>
+        <OverlayScrollbar />
       </body>
     </html>
   )

@@ -1,0 +1,57 @@
+.track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  width: 6px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.22);
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    background-color 0.2s ease,
+    width 0.15s ease;
+  will-change: transform, opacity;
+}
+
+.track.active .thumb {
+  opacity: 1;
+}
+
+.track:hover .thumb {
+  background-color: rgba(255, 255, 255, 0.35);
+  width: 8px;
+  right: 2px;
+}
+
+:global(.light) .thumb,
+:global([data-theme='light']) .thumb {
+  background-color: rgba(13, 17, 23, 0.28);
+}
+
+:global(.light) .track:hover .thumb,
+:global([data-theme='light']) .track:hover .thumb {
+  background-color: rgba(13, 17, 23, 0.45);
+}
+
+@media (hover: none) {
+  .track {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .track {
+    display: none;
+  }
+}

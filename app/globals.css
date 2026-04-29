@@ -1,0 +1,51 @@
+/* Hide native scrollbar entirely so it never reserves layout width.
+   A custom overlay scrollbar (components/overlay-scrollbar) draws the
+   visual indicator on top, fixed to the viewport edge. */
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge / IE */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome, Safari, modern Edge, Opera */
+}
+
+/* Inner scrollable elements (modals, drawers, code blocks) keep a
+   subtle native scrollbar so they remain usable. */
+*:not(html):not(body) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+}
+
+*:not(html):not(body)::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*:not(html):not(body)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*:not(html):not(body)::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+*:not(html):not(body)::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.light *:not(html):not(body),
+[data-theme='light'] *:not(html):not(body) {
+  scrollbar-color: rgba(13, 17, 23, 0.18) transparent;
+}
+
+.light *:not(html):not(body)::-webkit-scrollbar-thumb,
+[data-theme='light'] *:not(html):not(body)::-webkit-scrollbar-thumb {
+  background-color: rgba(13, 17, 23, 0.18);
+}

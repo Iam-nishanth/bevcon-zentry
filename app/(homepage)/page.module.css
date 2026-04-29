@@ -502,7 +502,15 @@
   letter-spacing: 1.5px;
   color: #EAE0D2;
   margin: 0 0 12px;
-  line-height: 1;
+  line-height: 1.05;
+}
+
+.productAffix {
+  font-size: 0.5em;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  opacity: 0.85;
+  white-space: nowrap;
 }
 
 .productDesc {
@@ -937,6 +945,13 @@
   .productName { font-size: 30px; margin-bottom: 10px; }
   .productDesc { font-size: 12.5px; margin-bottom: 16px; }
   .productTag { margin-bottom: 8px; }
+  .productAffix {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 0.42em;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 768px) {

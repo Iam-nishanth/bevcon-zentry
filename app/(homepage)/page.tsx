@@ -184,6 +184,7 @@ const products = [
   {
     tag: 'Fire Protection',
     name: 'Fire Rated Shutters',
+    affix: 'BS 476 Part 22 & UL Rated',
     desc: 'Certified fire protection systems built to the highest compliance standards.',
     img: '/home/product-showcase/fire-rated-shutters.jpg',
     href: '/products?category=Fire+Rated+Shutters',
@@ -248,7 +249,6 @@ const trustItems = [
   'Food Processing',
   'Warehousing',
   'Cargo Logistics',
-  'Steel & Metal',
   'Clean Rooms',
 ]
 
@@ -419,9 +419,14 @@ export default function HomeNew() {
               <div className={s.productOverlay} />
               <div className={s.productBody}>
                 <div className={s.productTag}>{p.tag}</div>
-                <h3 className={s.productName}>{p.name}</h3>
+                <h3 className={s.productName}>
+                  {p.name}
+                  {'affix' in p && p.affix && (
+                    <span className={s.productAffix}>({p.affix})</span>
+                  )}
+                </h3>
                 <p className={s.productDesc}>{p.desc}</p>
-                <Link href={p.href} className={s.productCta}>
+                <span className={s.productCta}>
                   Learn More
                   <svg
                     width="14"
@@ -435,7 +440,7 @@ export default function HomeNew() {
                   >
                     <path d="M2 7H12M8 3L12 7L8 11" />
                   </svg>
-                </Link>
+                </span>
               </div>
             </Link>
           ))}
@@ -443,6 +448,7 @@ export default function HomeNew() {
       </section>
 
       {/* ══════════ OUR CLIENTS ══════════════════════════ */}
+      {/*
       <section className={s.clients}>
         <div className={s.clientsHeader}>
           <span className={s.clientsEyebrow}>Trusted By</span>
@@ -477,6 +483,7 @@ export default function HomeNew() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ══════════ WHY BEVCON ZENTRY ════════════════════════ */}
       <section className={s.why}>
@@ -608,9 +615,7 @@ export default function HomeNew() {
             </div>
             <div className={s.ctaAddressBlock}>
               <span className={s.ctaAddressLabel}>Support</span>
-              <span className={s.ctaAddressValue}>
-                Available pan India
-              </span>
+              <span className={s.ctaAddressValue}>Available pan India</span>
             </div>
           </div>
         </div>

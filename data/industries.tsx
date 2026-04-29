@@ -148,26 +148,26 @@ const industries: { [key: string]: Industry } = {
       'Automated access control gates'
     ]
   },
-  steel: {
-    title: 'Steel & Metal Works',
-    description: 'Operate safely around heavy machinery, sparks, and extreme temperatures in steel processing facilities.',
-    imageSrc: '/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-flexible-door-with-high-wind-resistance-installed-on-a-mining-maintenance-workshop.jpg',
-    category: 'Heavy Industry',
-    benefits: [
-      'Heat and spark resistant protection',
-      'Reliable performance in harsh environments',
-      'Coverage for oversized openings',
-      'Worker safety and compliance',
-      'Maximum equipment uptime'
-    ],
-    solutions: [
-      'Heavy-duty insulated shutters',
-      'High-capacity dock levellers',
-      'Industrial high-speed doors',
-      'Fire-rated containment doors',
-      'Custom fold-up barriers'
-    ]
-  }
+  // steel: {
+  //   title: 'Steel & Metal Works',
+  //   description: 'Operate safely around heavy machinery, sparks, and extreme temperatures in steel processing facilities.',
+  //   imageSrc: '/products/nergeco/T-Series/NERGECO-T-ENDURO-2-automatic-flexible-door-with-high-wind-resistance-installed-on-a-mining-maintenance-workshop.jpg',
+  //   category: 'Heavy Industry',
+  //   benefits: [
+  //     'Heat and spark resistant protection',
+  //     'Reliable performance in harsh environments',
+  //     'Coverage for oversized openings',
+  //     'Worker safety and compliance',
+  //     'Maximum equipment uptime'
+  //   ],
+  //   solutions: [
+  //     'Heavy-duty insulated shutters',
+  //     'High-capacity dock levellers',
+  //     'Industrial high-speed doors',
+  //     'Fire-rated containment doors',
+  //     'Custom fold-up barriers'
+  //   ]
+  // }
 }
 
 export default industries
