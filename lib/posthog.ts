@@ -7,11 +7,12 @@ export function initPostHog(): void {
   // Prevent double init
   if ((window as any).posthog && (window as any).posthog.__posthogInitialized) return;
 
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_API_KEY as string, {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com',
-    autocapture: true,
-    capture_pageview: true,
-  });
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_API_KEY as string, {  
+   api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',  
+   autocapture: true,  
+   capture_pageview: false, // handled manually in your provider  
+  });  
+  
 
   // mark init
   (window as any).posthog = posthog;
