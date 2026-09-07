@@ -59,13 +59,13 @@ export default function Layout(props: { children: React.ReactNode }) {
         </title>
         <meta
           name="description"
-          content="Leading manufacturer and supplier of high speed doors, dock levellers, dock shelters, truck restraints, and fire-rated shutters for industrial and warehousing facilities. Premiu[...]
-        "
+          content="Leading manufacturer and supplier of high speed doors, dock levellers, dock shelters, truck restraints, and fire-rated shutters for industrial and warehousing facilities. Premium quality industrial doors and loading bay solutions."
+
         />
         <meta
           name="keywords"
-          content="high speed doors, dock levellers, dock levelers, industrial doors, loading bay solutions, dock shelters, truck restraints, fire rated shutters, roller shutters, sectional doors,[...]
-        "
+          content="high speed doors, dock levellers, dock levelers, industrial doors, loading bay solutions, dock shelters, truck restraints, fire rated shutters, roller shutters, sectional doors, Bevcon Zentry, warehouse doors, rapid doors, industrial shutters, loading dock equipment"
+
         />
         <meta name="author" content="Bevcon Zentry" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
