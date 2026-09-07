@@ -3,6 +3,7 @@ import { ColorModeScript, theme } from '@chakra-ui/react'
 import OverlayScrollbar from '#components/overlay-scrollbar/OverlayScrollbar'
 
 import { Provider } from './provider'
+import PostHogProvider from './providers/PostHogProvider'
 
 import './globals.css'
 
@@ -58,11 +59,13 @@ export default function Layout(props: { children: React.ReactNode }) {
         </title>
         <meta
           name="description"
-          content="Leading manufacturer and supplier of high speed doors, dock levellers, dock shelters, truck restraints, and fire-rated shutters for industrial and warehousing facilities. Premium quality industrial doors and loading bay solutions."
+          content="Leading manufacturer and supplier of high speed doors, dock levellers, dock shelters, truck restraints, and fire-rated shutters for industrial and warehousing facilities. Premiu[...]
+        "
         />
         <meta
           name="keywords"
-          content="high speed doors, dock levellers, dock levelers, industrial doors, loading bay solutions, dock shelters, truck restraints, fire rated shutters, roller shutters, sectional doors, Bevcon Zentry, warehouse doors, rapid doors, industrial shutters, loading dock equipment"
+          content="high speed doors, dock levellers, dock levelers, industrial doors, loading bay solutions, dock shelters, truck restraints, fire rated shutters, roller shutters, sectional doors,[...]
+        "
         />
         <meta name="author" content="Bevcon Zentry" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -159,7 +162,9 @@ export default function Layout(props: { children: React.ReactNode }) {
       </head>
       <body className={`chakra-ui-${colorMode}`}>
         <ColorModeScript initialColorMode={colorMode} />
-        <Provider>{props.children}</Provider>
+        <PostHogProvider>
+          <Provider>{props.children}</Provider>
+        </PostHogProvider>
         <OverlayScrollbar />
       </body>
     </html>
